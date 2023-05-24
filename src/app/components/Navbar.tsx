@@ -7,6 +7,9 @@ import image1 from '../components/slide-01.jpg'
 import image2 from '../components/f2.png'
 import image3 from '../components/dog.png'
 import DropdownMenu from '../components/DropdownMenu';
+import logo from '../components/logo.png'
+
+const options = ['Pet food', 'Be the vet', 'personalized tips,routine and medicines'];
 
 const Navbar = () => {
   return (
@@ -17,12 +20,12 @@ const Navbar = () => {
       <nav className="flex items-center justify-between py-4 px-8">
         <div className="flex items-center space-x-4">
           <Link href="/">
-            <p className="font-bold text-xl">Logo</p>
+          <Image src={logo} alt="Peta" width={100} height={50}  />
           </Link>
         </div>
         <div className="flex items-center space-x-4">
           <Link href="/products">
-            <p className="font-bold hover:text-gray-600">Products</p>
+            <DropdownMenu options={options} placeholder="Products"/>
           </Link>
           <Link href="/pricing">
             <p className="font-bold hover:text-gray-600">Pricing</p>

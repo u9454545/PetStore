@@ -8,7 +8,7 @@ import image2 from './components/awa.png'
 import image3 from './components/apwf.png'
 import image4 from './components/purina.png'
 import image5 from './components/petf.png'
-
+import TestimonialSection from './components/TestimonialSection'
 
 
 export default function Home() {
@@ -64,7 +64,10 @@ export default function Home() {
         </div>
       </div>
     </div> 
-
+    <div className=' bg-gray-200'>
+    <TestimonialSection></TestimonialSection>
+    </div>
+    
   </div>
   )
 }

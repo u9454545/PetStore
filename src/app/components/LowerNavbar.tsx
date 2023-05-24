@@ -39,23 +39,26 @@ const LowerNavbar = () => {
     
 
 </div>
-    <footer className="bg-yellow-400">
-        <div className="absolute inset-x-0 bottom-0 h-16 flex justify-center">
-        <ul className="bg-yellow-400 grid grid-cols-4 absolute bottom-0 center-0 ...">
-        <li>©2023 Pets.Inc</li>
-        <li>
-         Privacy
-        </li>   
-        <li>    
-        Terms
-        </li>
-        <li>
-        Sitemap
-        </li>
-        </ul>
-        <img></img>
+<footer className=" top-0 z-50 bg-white shadow flex items-center justify-center">
+      <nav className="flex items-center justify-between py-4 px-8">
+        
+        <div className="flex items-center space-x-4">
+          <Link href="/products">
+            <p className="font-bold hover:text-gray-600">©2023 Pets.Inc</p>
+          </Link>
+          <Link href="/pricing">
+            <p className="font-bold hover:text-gray-600">Privacy</p>
+          </Link>
+          <Link href="/about">
+            <p className="font-bold hover:text-gray-600">Terms</p>
+          </Link>
+          <Link href="/contact">
+            <p className="font-bold hover:text-gray-600">Sitemap</p>
+          </Link>
         </div>
-        </footer>
+      </nav>
+    </footer> 
+    
 
       </>
   );

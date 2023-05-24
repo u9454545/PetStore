@@ -1,9 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import Image from 'next/image'
-import image2 from '../components/dog.png'
-//"bg-gray-900 text-gray-300 mb-8
-//grid grid-flow-col
+import image2 from '../components/logo.png'
+import DropdownMenu from '../components/DropdownMenu';
+
+const options = [
+  'English',
+  'Spanish',
+  'Mandarin Chinese',
+  'Hindi',
+  'Arabic'
+]
 
 const LowerNavbar = () => {
   return (
@@ -39,25 +46,27 @@ const LowerNavbar = () => {
     
 
 </div>
-<footer className=" top-0 z-50 bg-white shadow flex items-center justify-center">
-      <nav className="flex items-center justify-between py-4 px-8">
+<div className=" top-0 z-50 bg-white shadow flex items-center justify-center">
+<div className="p-2">
+        <DropdownMenu options={options} placeholder="English"/>
+        </div>
         
+      <nav className="flex  items-center justify-between py-4 px-8">
         <div className="flex items-center space-x-4">
-          <Link href="/products">
+          
             <p className="font-bold hover:text-gray-600">©2023 Pets.Inc</p>
-          </Link>
-          <Link href="/pricing">
+          <Link href="/privacy">
             <p className="font-bold hover:text-gray-600">Privacy</p>
           </Link>
-          <Link href="/about">
+          <Link href="/terms">
             <p className="font-bold hover:text-gray-600">Terms</p>
           </Link>
-          <Link href="/contact">
+          <Link href="/sitemap">
             <p className="font-bold hover:text-gray-600">Sitemap</p>
           </Link>
         </div>
       </nav>
-    </footer> 
+    </div> 
     
 
       </>

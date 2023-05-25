@@ -47,13 +47,19 @@ const TestimonialSection: React.FC = () => {
         <img src={testimonial.logo} alt="Logo" className="w-10 h-10 mb-2" />
         <p className="text-lg font-bold">Testimonial</p>
         <div className="flex items-center mt-2">
-          <button className="text-gray-500 mr-2" onClick={handlePrevTestimonial}>
+          <button
+            className="text-gray-500 mr-2"
+            onClick={handlePrevTestimonial}
+          >
             &lt;
           </button>
           <div className="flex-1">
             <p className="text-center">{testimonial.text}</p>
           </div>
-          <button className="text-gray-500 ml-2" onClick={handleNextTestimonial}>
+          <button
+            className="text-gray-500 ml-2"
+            onClick={handleNextTestimonial}
+          >
             &gt;
           </button>
         </div>

@@ -21,15 +21,25 @@ export default function Home() {
    
        
        <Navbar/> 
-<section className="py-10 ">
+       <section className="py-10">
       <div className="container mx-auto">
         <h2 className="text-2xl text-center font-bold mb-6">Trusted by</h2>
-        <div className="flex justify-center gap-20">
-        <Image src={image} alt="Peta" width={100} height={50}  />
-        <Image src={image2} alt="awa" width={100} height={50}  />
-        <Image src={image3} alt="apwf" width={100} height={50}  />
-        <Image src={image4} alt="purina" width={100} height={50}  />
-        <Image src={image5} alt="petf" width={100} height={50}  />
+        <div className="flex flex-wrap justify-center gap-6 md:gap-20">
+          <div className="w-28 md:w-auto">
+            <Image src={image} alt="Peta" width={100} height={50} />
+          </div>
+          <div className="w-28 md:w-auto">
+            <Image src={image2} alt="awa" width={100} height={50} />
+          </div>
+          <div className="w-28 md:w-auto">
+            <Image src={image3} alt="apwf" width={100} height={50} />
+          </div>
+          <div className="w-28 md:w-auto">
+            <Image src={image4} alt="purina" width={100} height={50} />
+          </div>
+          <div className="w-28 md:w-auto">
+            <Image src={image5} alt="petf" width={100} height={50} />
+          </div>
         </div>
       </div>
     </section>

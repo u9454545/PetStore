@@ -15,46 +15,42 @@ const options = [
 const LowerNavbar = () => {
   return (
     <>
-    <div className="grid grid-flow-col  flex flex-col h-5 bg-yellow-400 text-gray-900 mb-8 absolute inset-x-0 bottom-0 h-16 ... ">
-    <Image src={image2} alt="cat and dog" width={50} height={10}  />
-    <div>
-    <p><b>Products</b></p>
-    <p>features</p>
-    <p>pricing</p>
-    </div>
-
-    <div>
-    <p><b>Resources</b></p> 
-    <p>Blog</p>
-    <p>user guides</p>
-    </div>
-
-    <div>
-    <p><b>Company</b></p> 
-    <p>About</p>
-    <p>Join us</p>
-    </div>
-    
-    <div>
-    <p><b>Subscribe to our newsletter</b></p> 
-    <p>For product and service announcements and exclusive insights</p>
-    <input type="text"/>✉ Input your email
-    <button>Subscribe</button>
-    </div>
-     
-
-    
-
-</div>
-<div className=" top-0 z-50 bg-white shadow flex items-center justify-center">
-<div className="p-2">
-        <DropdownMenu options={options} placeholder="English"/>
+      <div className="bg-yellow-400 text-gray-900">
+        <div className="grid grid-cols-4 py-4 px-8 gap-4">
+          <div className="flex items-center " style={{ width: "300px" }}>
+            <Image src={image2} alt="cat and dog" width={100} height={100}  />
+          </div>
+          <div className="space-y-2">
+            <p className="font-bold">Products</p>
+            <p>features</p>
+            <p>pricing</p>
+          </div>
+          <div className="space-y-2">
+            <p className="font-bold">Resources</p> 
+            <p>Blog</p>
+            <p>user guides</p>
+          </div>
+          <div className="space-y-2">
+            <p className="font-bold">Company</p> 
+            <p>About</p>
+            <p>Join us</p>
+          </div>
+          <div className="space-y-2">
+            <p className="font-bold">Subscribe to our newsletter</p> 
+            <p>For product and service announcements and exclusive insights</p>
+            <div className="flex">
+              <input type="text" placeholder="✉ Input your email" className="rounded-l px-2 py-1 focus:outline-none" />
+              <button className="bg-blue-500 text-white px-4 py-1 rounded-r">Subscribe</button>
+            </div>
+          </div>
         </div>
-        
-      <nav className="flex  items-center justify-between py-4 px-8">
-        <div className="flex items-center space-x-4">
-          
-            <p className="font-bold hover:text-gray-600">©2023 Pets.Inc</p>
+      </div>
+      <div className="bg-white shadow flex items-center justify-center py-4 px-8">
+        <div className="p-2">
+          <DropdownMenu options={options} placeholder="English"/>
+        </div>
+        <nav className="flex items-center space-x-4">
+          <p className="font-bold hover:text-gray-600">©2023 Pets.Inc</p>
           <Link href="/privacy">
             <p className="font-bold hover:text-gray-600">Privacy</p>
           </Link>
@@ -64,12 +60,10 @@ const LowerNavbar = () => {
           <Link href="/sitemap">
             <p className="font-bold hover:text-gray-600">Sitemap</p>
           </Link>
-        </div>
-      </nav>
-    </div> 
-    
-
-      </>
+        </nav>
+      </div>
+    </>
   );
 };
+
 export default LowerNavbar;

@@ -14,7 +14,11 @@ import Card from './components/Card'
 
 export default function Home() {
   return (
-    <div className="bg-[url('./components/slide-01.jpg')] bg-hero bg-no-repeat bg-cover bg-center"> 
+    <div>
+    <div className="bg-[url('./components/best.webp')] bg-hero bg-no-repeat bg-cover bg-center">
+
+    </div>
+   
        
        <Navbar/> 
 <section className="py-10 ">
@@ -144,7 +148,8 @@ export default function Home() {
         </div>
       </div>
     </div>
-
+    
+    <LowerNavbar></LowerNavbar>
 
   </div>
   )

@@ -19,7 +19,14 @@ const TestimonialSection: React.FC = () => {
       fullName: 'Jane Smith',
       jobTitle: 'Graphic Designer'
     },
-    // Add more testimonials as needed
+    {
+      id: 3,
+      logo: '/path/to/logo3.png',
+      text: 'Vestibulum consectetur elit at mi tempor, ut viverra lorem faucibus. Sed eleifend metus id nibh elementum feugiat.',
+      profilePic: '/path/to/profile3.png',
+      fullName: 'Alex Johnson',
+      jobTitle: 'UX Designer'
+    },
   ];
 
   const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
@@ -43,7 +50,7 @@ const TestimonialSection: React.FC = () => {
           <button className="text-gray-500 mr-2" onClick={handlePrevTestimonial}>
             &lt;
           </button>
-          <div>
+          <div className="flex-1">
             <p className="text-center">{testimonial.text}</p>
           </div>
           <button className="text-gray-500 ml-2" onClick={handleNextTestimonial}>

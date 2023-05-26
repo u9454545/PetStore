@@ -12,12 +12,13 @@ import TestimonialSection from './components/TestimonialSection'
 import PricingSection from './components/PricingSection'
 import Card from './components/Card'
 
+
+
 export default function Home() {
   return (
     <div className="bg-[url('./components/slide-01.jpg')] bg-hero bg-no-repeat bg-cover bg-center">
-
-    
-   
+        
+  
        
        <Navbar/> 
        <section className="py-10">
@@ -161,8 +162,11 @@ export default function Home() {
     <LowerNavbar></LowerNavbar>
 
   </div>
+  
   )
 }
+
+
 
 
 

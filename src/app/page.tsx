@@ -14,10 +14,9 @@ import Card from './components/Card'
 
 export default function Home() {
   return (
-    <div>
-    <div className="bg-[url('./components/best.webp')] bg-hero bg-no-repeat bg-cover bg-center">
+    <div className="bg-[url('./components/slide-01.jpg')] bg-hero bg-no-repeat bg-cover bg-center">
 
-    </div>
+    
    
        
        <Navbar/> 

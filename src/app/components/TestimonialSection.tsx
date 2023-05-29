@@ -27,7 +27,24 @@ const TestimonialSection: React.FC = () => {
       fullName: 'Alex Johnson',
       jobTitle: 'UX Designer'
     },
+    {
+      id: 4,
+      logo: '/path/to/logo4.png',
+      text: 'Cras auctor mattis odio nec varius. Pellentesque at mi consectetur, congue nulla a, fermentum orci.',
+      profilePic: '/path/to/profile4.png',
+      fullName: 'Sarah Davis',
+      jobTitle: 'Marketing Manager'
+    },
+    {
+      id: 5,
+      logo: '/path/to/logo5.png',
+      text: 'Fusce rutrum elit eget dolor lobortis, in accumsan lectus pretium. Proin congue enim eu tincidunt feugiat.',
+      profilePic: '/path/to/profile5.png',
+      fullName: 'Michael Wilson',
+      jobTitle: 'Product Manager'
+    },
   ];
+  
 
   const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
 

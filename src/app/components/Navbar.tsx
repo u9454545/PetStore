@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="sticky top-0 z-50 bg-white shadow">
+      <header className="sticky top-0 z-50 bg-[#e2b2ff]">
         <nav className="flex items-center justify-between py-4 px-8">
           <div className="flex items-center space-x-4">
             <Link href="/">

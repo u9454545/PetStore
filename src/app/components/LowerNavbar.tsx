@@ -9,7 +9,7 @@ const options = ['English', 'Spanish', 'Mandarin Chinese', 'Hindi', 'Arabic'];
 const LowerNavbar = () => {
   return (
     <>
-      <div className="bg-yellow-400 text-gray-900">
+      <div className="bg-[#e2b2ff] text-gray-900">
       <div className="flex items-center justify-center md:justify-start">
           <Image src={logo} alt="cat and dog" width={100} height={100} />
         </div>
@@ -44,6 +44,28 @@ const LowerNavbar = () => {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+    <div className="bg-white shadow flex flex-col md:flex-row items-center justify-center py-4 px-8">
+      <div className="p-2">
+        <DropdownMenu options={options} placeholder="English" />
+      </div>
+      <nav className="flex items-center space-x-4 md:ml-4">
+        <p className="font-bold hover:text-gray-600">©2023 Pets.Inc</p>
+        <Link href="/privacy">
+          <p className="font-bold hover:text-gray-600">Privacy</p>
+        </Link>
+        <Link href="/terms">
+          <p className="font-bold hover:text-gray-600">Terms</p>
+        </Link>
+        <Link href="/sitemap">
+          <p className="font-bold hover:text-gray-600">Sitemap</p>
+        </Link>
+      </nav>
+      <div className="flex items-center mt-4 md:mt-0">
+        <Image src="/path/to/logo1.png" alt="Logo 1" width={24} height={24} />
+        <Image src="/path/to/logo2.png" alt="Logo 2" width={24} height={24} />
+        <Image src="/path/to/logo3.png" alt="Logo 3" width={24} height={24} />
       </div>
     </div>
     </>

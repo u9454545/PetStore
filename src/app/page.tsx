@@ -92,7 +92,7 @@ export default function Home() {
 
       <PricingSection></PricingSection>
 
-        <section className="py-10">
+        <section className="py-10 ">
   <div className="container mx-auto flex justify-end">
     <div className="max-w-2xl">
       <div className="w-2/3 p-4 bg-[#fefced]">
@@ -112,10 +112,10 @@ export default function Home() {
   </div>
 </section>
 
-      <div className="flex flex-col items-center justify-center w-screen">
+      <div className="flex flex-col items-center justify-center w-screen bg-[#fefced]">
         <div className="max-w-2xl p-4">
-          <h2 className="text-2xl font-bold mb-4 text-center">Section Heading</h2>
-          <p className="mb-4">
+          <h2 className="text-2xl font-bold mb-4 text-center bg-[#fefced]">Section Heading</h2>
+          <p className="mb-4 bg-[#fefced]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar
             tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
           </p>

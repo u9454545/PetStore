@@ -1,37 +1,50 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import john from '../components/john.png'
+import johncompany from '../components/john company.png'
+import alex from '../components/alex.png'
+import alexcompany from '../components/alex company.jpeg'
+import jane  from '../components/jane.png'
+import janecompany from '../components/jane comapny.jpg'
+import micheal from '../components/micheal.png'
+import michealcomapny from '../components/micheal company.png'
+import sarah from '../components/sarah.png'
+import sarahcompany from '../components/sarah company.png'
+
+
+
 
 const TestimonialSection: React.FC = () => {
   const testimonials = [
     {
       id: 1,
-      logo: '/path/to/logo1.png',
+      logo: '../components/john company.png',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus.',
-      profilePic: '/path/to/profile1.png',
+      profilePic: '../components/john.png',
       fullName: 'John Doe',
       jobTitle: 'Web Developer'
     },
     {
       id: 2,
-      logo: '/path/to/logo2.png',
+      logo: '../components/jane comapny.jpg',
       text: 'Nullam non neque et dolor rutrum tempor in a ligula. Sed id mauris eu dolor eleifend euismod.',
-      profilePic: '/path/to/profile2.png',
+      profilePic: '../components/jane.png',
       fullName: 'Jane Smith',
       jobTitle: 'Graphic Designer'
     },
     {
       id: 3,
-      logo: '/path/to/logo3.png',
+      logo: '../components/alex company.jpeg',
       text: 'Vestibulum consectetur elit at mi tempor, ut viverra lorem faucibus. Sed eleifend metus id nibh elementum feugiat.',
-      profilePic: '/path/to/profile3.png',
+      profilePic: '../components/alex.png', 
       fullName: 'Alex Johnson',
       jobTitle: 'UX Designer'
     },
     {
       id: 4,
-      logo: '/path/to/logo4.png',
+      logo: '../components/sarah company.png',
       text: 'Cras auctor mattis odio nec varius. Pellentesque at mi consectetur, congue nulla a, fermentum orci.',
-      profilePic: '/path/to/profile4.png',
+      profilePic: '../components/sarah.png',
       fullName: 'Sarah Davis',
       jobTitle: 'Marketing Manager'
     },
@@ -45,8 +58,7 @@ const TestimonialSection: React.FC = () => {
     },
   ];
   
-
-  const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonial(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -55,6 +67,16 @@ const TestimonialSection: React.FC = () => {
   const handleNextTestimonial = () => {
     setCurrentTestimonial(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextTestimonial();
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const testimonial = testimonials[currentTestimonial];
 
@@ -80,7 +102,7 @@ const TestimonialSection: React.FC = () => {
             &gt;
           </button>
         </div>
-      </div>
+        </div>
       <div className="flex items-center mt-4">
         <img
           src={testimonial.profilePic}
@@ -97,3 +119,6 @@ const TestimonialSection: React.FC = () => {
 };
 
 export default TestimonialSection;
+
+     
+

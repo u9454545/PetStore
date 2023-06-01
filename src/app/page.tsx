@@ -91,7 +91,7 @@ export default function Home() {
   </div>
 </section>
 
-      <div className=" bg-[#fefced]">
+      <div className=" bg-[#faf2b5]">
         <TestimonialSection></TestimonialSection>
       </div>
 

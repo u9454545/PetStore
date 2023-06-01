@@ -1,11 +1,27 @@
 'use client';
 import React, { useState } from 'react';
+import { InformationCircleIcon, CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface PricingOption {
   id: string;
   label: string;
   price: string;
   features: string[];
+}
+
+interface FeaturePlan {
+  name: string,
+  included: boolean,
+  info?: string,
+}
+
+interface Plan {
+  name: string,
+  description: string,
+  valueMonth: number,
+  valueYear: number,
+  features: FeaturePlan[],
+  isPopular: boolean,
 }
 
 const PricingSection: React.FC = () => {
@@ -24,102 +40,96 @@ const PricingSection: React.FC = () => {
     }
   ];
 
+  const plans: Plan[] = [
+    {
+      name: 'Personal',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      valueMonth: 50,
+      valueYear: 40,
+      features: [
+        { name: 'ipsum deserunt nisi tampor labor', included: true },
+        { name: 'ipsum deserunt nisi tampor labor', included: true, info: 'ipsum deserunt nisi tampor labor' },
+        { name: 'ipsum deserunt nisi tampor labor', included: false },
+        { name: 'ipsum deserunt nisi tampor labor', included: false }
+      ],
+      isPopular: false,
+    },
+    {
+      name: 'Startup',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      valueMonth: 100,
+      valueYear: 80,
+      features: [
+        { name: 'ipsum deserunt nisi tampor labor', included: true },
+        { name: 'ipsum deserunt nisi tampor labor', included: true, info: 'ipsum deserunt nisi tampor labor' },
+        { name: 'ipsum deserunt nisi tampor labor', included: true },
+        { name: 'ipsum deserunt nisi tampor labor', included: false }
+      ],
+      isPopular: true,
+    },
+    {
+      name: 'Organization',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      valueMonth: 200,
+      valueYear: 120,
+      features: [
+        { name: 'ipsum deserunt nisi tampor labor', included: true },
+        { name: 'ipsum deserunt nisi tampor labor', included: true, info: 'ipsum deserunt nisi tampor labor' },
+        { name: 'ipsum deserunt nisi tampor labor', included: true },
+        { name: 'ipsum deserunt nisi tampor labor', included: true }
+      ],
+      isPopular: false,
+    }
+  ]
+
   const [selectedOption, setSelectedOption] = useState<string>(pricingOptions[0].id);
 
   const handleOptionChange = (optionId: string) => {
     setSelectedOption(optionId);
   };
 
-  const renderFeatures = () => {
-    const selectedPricingOption = pricingOptions.find((option) => option.id === selectedOption);
-
-    if (selectedPricingOption) {
-      return selectedPricingOption.features.map((feature, index) => (
-        <div key={index} className="flex items-center mb-2 bg-[#fefced]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-green-500 mr-2"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M17.707 7.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L9 14.586l7.293-7.293a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <p>{feature}</p>
-        </div>
-      ));
-    }
-
-    return null;
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center bg-[#fefced] p-4">
-      <p className="text-lg font-bold mb-4">Pricing</p>
-      <p className="text-gray-500 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4">
+    <div className="flex flex-col items-center justify-center bg-[#fefced] p-20">
+      <p className="text-5xl font-bold">Pricing</p>
+      <p className="text-black-500 my-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div className="flex flex-col bg-white p-2 md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         {pricingOptions.map((option) => (
           <button
             key={option.id}
-            className={`py-2 px-4 rounded-full transition-colors duration-300 ${
-              selectedOption === option.id ? 'bg-white text-gray-800' : 'bg-gray-200 text-gray-500'
-            }`}
+            className={`py-3 px-8 transition-colors duration-300 text-black ${selectedOption === option.id ? 'bg-black text-white' : 'bg-white'
+              }`}
             onClick={() => handleOptionChange(option.id)}
           >
             {option.label}
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 bg-[#fefced]">
-        {pricingOptions.map((option) => (
-          <div
-            key={option.id}
-            className={`bg-white rounded-md shadow-md p-4 ${
-              selectedOption === option.id ? 'border-2 border-[#fefced]' : ''
-            }`}
-            >
-            <p className="text-lg font-bold mb-2">{option.label}</p>
-            <p className="text-gray-500 mb-2">{option.price} / user / month</p>
-            {renderFeatures()}
-            <div className="flex items-center mt-4">
-            <svg
-                         xmlns="http://www.w3.org/2000/svg"
-                         className="h-4 w-4 text-green-500 mr-2"
-                         viewBox="0 0 20 20"
-                         fill="currentColor"
-                       >
-            <path
-                           fillRule="evenodd"
-                           d="M17.707 7.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L9 14.586l7.293-7.293a1 1 0 011.414 0z"
-                           clipRule="evenodd"
-                         />
-            </svg>
-            <p className="text-green-500 mr-2">Some text</p>
-            <svg
-                         xmlns="http://www.w3.org/2000/svg"
-                         className="h-4 w-4 text-red-500 mr-2"
-                         viewBox="0 0 20 20"
-                         fill="currentColor"
-                       >
-            <path
-                           fillRule="evenodd"
-                           d="M13.707 6.293a1 1 0 010 1.414L8.414 12l5.293 5.293a1 1 0 01-1.414 1.414L7 13.414l-5.293 5.293a1 1 0 01-1.414-1.414L5.586 12 .293 6.707A1 1 0 011.707 5.293L7 10.586l5.293-5.293a1 1 0 011.414 0z"
-                           clipRule="evenodd"
-                         />
-            </svg>
-            <p className="text-red-500">Some text</p>
-            </div>
-            </div>
-            ))}
-            </div>
-            <button className="py-2 px-4 bg-gray-500 text-white rounded-full hover:bg-white hover:text-gray-800 transition-colors duration-300">
-            Upgrade
-            </button>
-            </div>
-            );
-            };
-            
-            export default PricingSection;
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 bg-[#fefced] mt-8">
+        {
+          plans.map(plan => (
+            <div key={plan.name} className={`flex flex-col bg-white p-6 pt-9 my-5 border-black ${plan.isPopular ? 'border-2 my-0' : ''}`}>
+              <p className="text-4xl font-bold">{plan.name}</p>
+              <p className='mt-2 text-sm'>{plan.description}</p>
+              <div className='flex mt-5 items-center'>
+                <span className='text-4xl font-bold'>${selectedOption === 'monthly' ? plan.valueMonth : plan.valueYear}</span><span className='ml-2'>/user/month</span>
+              </div>
+              <ul className='my-4 space-y-2'>
+                {
+                  plan.features.map(feature => (
+                    <li key={feature.name} className='flex flex-row items-center'>
+                      {feature.included ? <CheckCircleIcon className="w-8 text-green-500" /> : <XMarkIcon className="w-8 text-red-500" />}
+                      <span className='text-sm ml-2'>{feature.name}</span>
+                      {feature.info ? <InformationCircleIcon className="ml-2 w-8 text-gray-600" aria-hidden="true" /> : null}
+                    </li>
+                  ))
+                }
+              </ul>
+              <button className={`border-black border-solid border-2 my-4 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>Upgrade</button>
+            </div>))
+        }
+      </div>
+    </div>
+  );
+};
+
+export default PricingSection;

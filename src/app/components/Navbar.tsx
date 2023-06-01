@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import DropdownMenu from '../components/DropdownMenu';
 import logo from '../components/logo.png';
+import heroImage from '../components/slide-01.jpg';
 
 const options = ['Pet food', 'Be the vet', 'Personalized tips, routine and medicines'];
 
@@ -27,31 +28,33 @@ const Navbar = () => {
             </Link>
           </div>
           
-          <Link href="/products">
+          <div className="flex space-x-10">
+            <Link href="/products">
               <p>
                 <DropdownMenu options={options} placeholder="Products" />
               </p>
             </Link>
             <Link href="/pricing">
-              <p className="font-bold hover:text-gray-600">Pricing</p>
+              <p className="hover:text-gray-600">Pricing</p>
             </Link>
             <Link href="/about">
-              <p className="font-bold hover:text-gray-600">About Us</p>
+              <p className="hover:text-gray-600">About Us</p>
             </Link>
             <Link href="/contact">
-              <p className="font-bold hover:text-gray-600">Contact</p>
+              <p className="hover:text-gray-600">Contact</p>
             </Link>
             <Link href="/blog">
-              <p className="font-bold hover:text-gray-600">Blog</p>
+              <p className="hover:text-gray-600">Blog</p>
             </Link>
+          </div>
             
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-5">
             
             <Link href="/signin">
-              <p className="font-bold hover:text-gray-600">Sign In</p>
+              <p className="hover:text-gray-600">Sign In</p>
             </Link>
             <Link href="/signup">
-              <p className="font-bold hover:text-gray-600">Sign Up</p>
+              <p className="text-accent py-2 px-4 bg-black hover:bg-gray-600">Sign Up</p>
             </Link>
           </div>
           <div className="md:hidden flex items-center">
@@ -110,14 +113,21 @@ const Navbar = () => {
 
       {/* Hero Section */}
       <section
-        className="flex items-center justify-center h-screen"
-        style={{
-          backgroundImage: 'url("/path/to/image.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        className="flex flex-col mt-16 max-w-5xl mx-auto items-center"
       >
-        <h1 className="text-4xl font-bold">Welcome to our Pet Store!</h1>
+        <div className="flex flex-col max-w-3xl mx-auto gap-y-6">
+          <h1 className="text-6xl font-bold text-center">Welcome to our Pet Store!</h1>
+          <h3 className="text-xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.</h3>
+          <div className="flex gap-5 items-center justify-center">
+            <Link href="/join">
+              <p className="text-accent py-3 px-14 border-black border-solid border-2 bg-black hover:bg-gray-600 hover:border-gray-600">Join us now</p>
+            </Link>
+            <Link href="/demo">
+              <p className="text-black py-3 px-14 border-black border-solid border-2 hover:text-gray-600 hover:border-gray-600">Request demo</p>
+            </Link>
+          </div>
+        </div>
+        <Image className="object-cover object-center h-full w-full mt-12" src={heroImage} alt="Hero Image" />
       </section>
     </div>
   );

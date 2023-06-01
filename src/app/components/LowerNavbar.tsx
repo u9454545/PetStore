@@ -65,9 +65,9 @@ const LowerNavbar = () => {
     
   </div>
       <div className="flex items-center mt-4 md:mt-0 ml-auto">
-  <Image src="/path/to/logo1.png" alt="Logo 1" width={24} height={24} />
+  {/* <Image src="/path/to/logo1.png" alt="Logo 1" width={24} height={24} />
   <Image src="/path/to/logo2.png" alt="Logo 2" width={24} height={24} />
-  <Image src="/path/to/logo3.png" alt="Logo 3" width={24} height={24} />
+  <Image src="/path/to/logo3.png" alt="Logo 3" width={24} height={24} /> */}
 </div>
 
     </div>

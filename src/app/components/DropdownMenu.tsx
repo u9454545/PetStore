@@ -1,6 +1,7 @@
 'use client';
 import { Fragment, useState } from 'react';
 import { Transition, Menu } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 interface DropdownProps {
   options: string[];
@@ -14,8 +15,12 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
     <Menu>
       {({ open }) => (
         <>
-          <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
+          <Menu.Button className="inline-flex justify-center items-center w-full p-0 shadow-none font text-black hover:text-gray-600 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
             {selectedOption !== '' ? selectedOption : placeholder}
+            <ChevronDownIcon
+              className="ml-3 h-5 w-5 scale-150 stroke-0 stroke-black hover:stroke-current"
+              aria-hidden="true"
+            />
           </Menu.Button>
           <Transition
             show={open}

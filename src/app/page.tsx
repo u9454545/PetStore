@@ -15,7 +15,6 @@ import Animation from './components/Animation'
 import p from './components/pets with owners.jpg'
 import q from './components/vet.jpg'
 import k from './components/dog-and-cat.jpg'
-import App from './components/par'
 import App2 from './components/App2'
 
 export default function Home() {

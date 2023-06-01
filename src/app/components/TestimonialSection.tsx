@@ -81,40 +81,41 @@ const TestimonialSection: React.FC = () => {
   const testimonial = testimonials[currentTestimonial];
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center flex-col">
-        <img src={testimonial.logo} alt="Logo" className="w-10 h-10 mb-2" />
-        <p className="text-lg font-bold">Testimonial</p>
-        <div className="flex items-center mt-2">
-          <button
-            className="text-gray-500 mr-2"
-            onClick={handlePrevTestimonial}
-          >
-            &lt;
-          </button>
-          <div className="flex-1">
-            <p className="text-center">{testimonial.text}</p>
-          </div>
-          <button
-            className="text-gray-500 ml-2"
-            onClick={handleNextTestimonial}
-          >
-            &gt;
-          </button>
-        </div>
-        </div>
-      <div className="flex items-center mt-4">
-        <img
-          src={testimonial.profilePic}
-          alt="Profile"
-          className="w-8 h-8 rounded-full mr-2"
-        />
-        <div>
-          <p className="font-bold">{testimonial.fullName}</p>
-          <p className="text-gray-500">{`- ${testimonial.jobTitle}`}</p>
-        </div>
+    <div className="flex flex-col items-center justify-center p-4">
+  <div className="flex items-center flex-col">
+    <img src={testimonial.logo} alt="Logo" className="w-10 h-10 mb-2" />
+    <p className="text-lg font-bold">Testimonial</p>
+    <div className="flex items-center mt-2">
+      <button
+        className="text-gray-500 mr-2"
+        onClick={handlePrevTestimonial}
+      >
+        &lt;
+      </button>
+      <div className="flex-1">
+        <p className="text-center">{testimonial.text}</p>
       </div>
+      <button
+        className="text-gray-500 ml-2"
+        onClick={handleNextTestimonial}
+      >
+        &gt;
+      </button>
     </div>
+  </div>
+  <div className="flex items-center mt-4">
+    <img
+      src={testimonial.profilePic}
+      alt="Profile"
+      className="w-8 h-8 rounded-full mr-2"
+    />
+    <div>
+      <p className="font-bold">{testimonial.fullName} {`- ${testimonial.jobTitle}`}</p>
+      
+    </div>
+  </div>
+</div>
+
   );
 };
 

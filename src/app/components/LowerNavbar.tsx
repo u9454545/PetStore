@@ -46,7 +46,7 @@ const LowerNavbar = () => {
         </div>
       </div>
     </div>
-    <div className="bg-white shadow flex flex-col md:flex-row justify-between py-4 px-8">
+    <div className="shadow flex flex-col md:flex-row justify-between py-4 px-8 bg-[#e2b2ff]">
       <div className="p-2">
         <DropdownMenu options={options} placeholder="English" />
       </div>

@@ -21,13 +21,7 @@ const PricingSection: React.FC = () => {
       label: 'Yearly',
       price: '$90',
       features: ['Feature 1', 'Feature 2', 'Feature 3'],
-    },
-    {
-      id: 'custom',
-      label: 'Custom',
-      price: '$50',
-      features: ['Feature 1', 'Feature 2', 'Feature 3'],
-    },
+    }
   ];
 
   const [selectedOption, setSelectedOption] = useState<string>(pricingOptions[0].id);
@@ -63,7 +57,7 @@ const PricingSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-[#fefced]">
+    <div className="flex flex-col items-center justify-center bg-[#fefced] p-4">
       <p className="text-lg font-bold mb-4">Pricing</p>
       <p className="text-gray-500 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4">
@@ -79,7 +73,7 @@ const PricingSection: React.FC = () => {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 bg-[#fefced]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 bg-[#fefced]">
         {pricingOptions.map((option) => (
           <div
             key={option.id}

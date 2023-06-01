@@ -26,8 +26,8 @@ const Navbar = () => {
               </p>
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/products">
+          
+          <Link href="/products">
               <p>
                 <DropdownMenu options={options} placeholder="Products" />
               </p>
@@ -44,6 +44,9 @@ const Navbar = () => {
             <Link href="/blog">
               <p className="font-bold hover:text-gray-600">Blog</p>
             </Link>
+            
+          <div className="hidden md:flex items-center space-x-4">
+            
             <Link href="/signin">
               <p className="font-bold hover:text-gray-600">Sign In</p>
             </Link>

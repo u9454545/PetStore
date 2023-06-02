@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import Navbar from "./components/Navbar"
@@ -17,7 +17,35 @@ import q from './components/vet.jpg'
 import k from './components/dog-and-cat.jpg'
 import App2 from './components/App2'
 
+interface Blog {
+  title: string,
+  picture: StaticImageData,
+  category: string,
+  date: string,
+}
+
 export default function Home() {
+  const blogs: Blog[] = [
+    {
+      category: 'Do consectetour',
+      title: 'Peta',
+      date: new Date().toLocaleDateString(),
+      picture: image,
+    },
+    {
+      category: 'Do consectetour',
+      title: 'Awa',
+      date: new Date().toLocaleDateString(),
+      picture: image2,
+    },
+    {
+      category: 'Do consectetour',
+      title: 'Apfw',
+      date: new Date().toLocaleDateString(),
+      picture: image3,
+    }
+  ];
+
   return (
 
     <div className="relative">
@@ -71,7 +99,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="py-10 bg-[#fefced]">
+          <section className="py-20 bg-[#fefced]">
             <div className="container mx-auto flex max-w-6xl">
               <div className="flex gap-40 items-center">
                 <div className="w-1/2">
@@ -95,84 +123,63 @@ export default function Home() {
             </div>
           </section>
 
-          <div className=" bg-[#faf2b5] py-20 mt-20">
+          <div className=" bg-[#faf2b5] pt-24 pb-20">
             <TestimonialSection></TestimonialSection>
           </div>
 
           <PricingSection />
 
-          <section className="py-10 ">
-            <div className="container mx-auto flex justify-end">
-              <div className="max-w-2xl">
-                <div className="w-2/3 p-4 bg-[#fefced]">
-                  <h2 className="text-2xl font-bold">Section Heading</h2>
-                  <p className="mt-4">
+          <section className="py-32">
+            <div className="mx-auto flex max-w-6xl">
+              <div className="flex w-1/2 items-center">
+                <div className="py-20 pr-20">
+                  <h2 className="text-5xl font-bold">Get started!</h2>
+                  <p className="mt-6">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
                   </p>
-                  <div className="mt-4">
-                    <button className="bg-[#e2b2ff] text-gray-700 border border-gray-700 px-4 py-2 mr-2">Button 1</button>
-                    <button className="bg-[#faf2b5] text-gray-700 border border-gray-700 px-4 py-2">Button 2</button>
+                  <div className="flex mt-6">
+                    <Link href="/signup">
+                      <p className="text-accent py-4 px-8  bg-black hover:bg-gray-600 hover:text-accent-600">Sign up</p>
+                    </Link>
                   </div>
                 </div>
               </div>
-              <div className="w-1/3">
+              <div className="flex w-1/2 items-center">
                 <Image src={k} alt="Picture" />
               </div>
             </div>
           </section>
 
-          <div className="flex flex-col items-center justify-center w-screen bg-[#fefced]">
-            <div className="max-w-2xl p-4">
-              <h2 className="text-2xl font-bold mb-4 text-center bg-[#fefced]">Section Heading</h2>
-              <p className="mb-4 bg-[#fefced]">
+          <div className="flex flex-col items-center justify-center w-screen bg-[#fefced] py-24">
+            <div className="max-w-6xl">
+              <h2 className="text-5xl font-bold text-center bg-[#fefced]">What's new?</h2>
+              <p className="mt-6 bg-[#fefced] text-center mx-auto max-w-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar
                 tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
               </p>
-              <div className="flex justify-between">
-                <div className="w-1/3">
-                  {/* <img src="/path/to/picture1.jpg" alt="Picture 1" className="mb-2 rounded-full" /> */}
-                  <div className="bg-[#fefced] p-2">
-                    <p>Text in the box</p>
-                    <h3 className="text-xl font-bold">Box Heading</h3>
-                  </div>
-                  <div className="flex justify-between mt-2">
-                    <p>Date</p>
-                    <div className="flex items-center bg-[#fefced] rounded-full p-1">
-                      <span className="bg-[#faf2b5] text-gray-700 px-2 py-1 rounded-full">Some time</span>
+              <div className="grid lg:grid-cols-3 gap-8 mt-8">
+                {
+                  blogs.map(blog => (
+                    <div key={blog.title} className="flex flex-col border-solid border-gray-700 border bg-white p-4 justify-between">
+                      <div className='p-12 text-center items-center'><Image src={blog.picture} alt="Blog" /></div>
+                      <div className='pb-4'>
+                        <p className='text-md'>{blog.category}</p>
+                        <h3 className="text-xl font-bold">{blog.title}</h3>
+                        <div className="flex justify-between items-center mt-4">
+                          <p className='text-sm'>Date</p>
+                          <div className="flex items-center rounded-full">
+                            <span className=" text-black text-xs px-2 py-1 border-solid border-gray-700 border rounded-full">{blog.date}</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="w-1/3">
-                  {/* <img src="/path/to/picture2.jpg" alt="Picture 2" className="mb-2 rounded-full" /> */}
-                  <div className="bg-[#fefced] p-2">
-                    <p>Text in the box</p>
-                    <h3 className="text-xl font-bold">Box Heading</h3>
-                  </div>
-                  <div className="flex justify-between mt-2">
-                    <p>Date</p>
-                    <div className="flex items-center bg-[#fefced] rounded-full p-1">
-                      <span className="bg-[#faf2b5] text-gray-700 px-2 py-1 rounded-full">Some time</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-1/3">
-                  {/* <img src="/path/to/picture3.jpg" alt="Picture 3" className="mb-2 rounded-full" /> */}
-                  <div className="bg-[#fefced] p-2">
-                    <p>Text in the box</p>
-                    <h3 className="text-xl font-bold">Box Heading</h3>
-                  </div>
-                  <div className="flex justify-between mt-2">
-                    <p>Date</p>
-                    <div className="flex items-center bg-[#fefced] rounded-full p-1">
-                      <span className="bg-[#faf2b5] text-gray-700 px-2 py-1 rounded-full">Some time</span>
-                    </div>
-                  </div>
-                </div>
+                  ))
+                }
               </div>
               <div className="flex justify-center">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-                  See more articles
-                </button>
+                <Link href="/more_articles">
+                  <p className="text-accent py-2 px-4 mt-14 bg-black hover:bg-gray-600 hover:text-accent-600">See more articles</p>
+                </Link>
               </div>
             </div>
           </div>

@@ -90,7 +90,7 @@ const TestimonialSection: React.FC = () => {
         <p className="font-bold text-lg mt-5">Torquent</p>
         <div className="flex items-center mt-10 h-20 gap-24">
           <button
-            className="text-black text-1xl py-3 px-4 bg-black bg-opacity-5 text-center"
+            className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center"
             onClick={handlePrevTestimonial}
           >
             &lt;
@@ -99,7 +99,7 @@ const TestimonialSection: React.FC = () => {
             <p className="text-center text-3xl">{testimonial.text}</p>
           </div>
           <button
-            className="text-black text-1xl py-3 px-4 bg-black bg-opacity-5 text-center"
+            className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center"
             onClick={handleNextTestimonial}
           >
             &gt;

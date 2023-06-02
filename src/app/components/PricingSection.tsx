@@ -89,7 +89,7 @@ const PricingSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-[#fefced] p-20">
+    <div className="flex flex-col items-center justify-center bg-[#fefced] py-28">
       <p className="text-5xl font-bold">Pricing</p>
       <p className="text-black-500 my-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <div className="flex flex-col bg-white p-2 md:flex-row space-y-4 md:space-y-0 md:space-x-4">
@@ -104,10 +104,10 @@ const PricingSection: React.FC = () => {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 bg-[#fefced] mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 bg-[#fefced] mt-8 max-w-6xl">
         {
           plans.map(plan => (
-            <div key={plan.name} className={`flex flex-col bg-white p-6 pt-9 my-5 border-black ${plan.isPopular ? 'border-2 my-0' : ''}`}>
+            <div key={plan.name} className={`flex flex-col bg-white p-6 pt-9 border-black ${plan.isPopular ? 'border-2 my-0' : 'my-5'}`}>
               <p className="text-4xl font-bold">{plan.name}</p>
               <p className='mt-2 text-sm'>{plan.description}</p>
               <div className='flex mt-5 items-center'>
@@ -124,7 +124,7 @@ const PricingSection: React.FC = () => {
                   ))
                 }
               </ul>
-              <button className={`border-black border-solid border-2 my-4 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>Upgrade</button>
+              <button className={`border-black border-solid border my-4 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>Upgrade</button>
             </div>))
         }
       </div>

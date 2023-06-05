@@ -155,7 +155,7 @@ export default function Home() {
           <section className='bg-[#fefced] px-5'>
             <div className="flex flex-col items-center justify-center py-24 mx-auto max-w-1xl lg:max-w-6xl md:max-w-3xl">
               <div className="max-w-6xl">
-                <h2 className="text-5xl font-bold text-center bg-[#fefced]">What's new?</h2>
+                <h2 className="text-5xl font-bold text-center bg-[#fefced]">What is new?</h2>
                 <p className="mt-6 bg-[#fefced] text-center mx-auto max-w-md">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar
                   tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.

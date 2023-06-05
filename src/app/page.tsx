@@ -53,7 +53,7 @@ export default function Home() {
         <Navbar />
         <div>
           <section className="py-32">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-5">
               <h2 className="text-2xl text-center font-bold my-14">Trusted by</h2>
               <div className="flex flex-wrap justify-center gap-6 md:gap-20">
                 <div className="w-28 md:w-auto">
@@ -75,10 +75,10 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="py-10 bg-[#fefced]">
-            <div className="container mx-auto flex max-w-7xl lg:max-w-6xl md:max-w-3xl">
-              <div className="flex gap-40 items-center">
-                <div className="w-1/2">
+          <section className="py-20 bg-[#fefced] px-5 max-sm:bg-gray-100">
+            <div className="container mx-auto flex max-w-7xl lg:max-w-6xl md:max-w-3xl max-sm:justify-center">
+              <div className="flex grid-cols-2 gap-40 items-center max-sm:flex-col max-sm:max-w-[420px] max-sm:gap-5">
+                <div className="w-1/2 max-sm:w-full max-sm:order-2">
                   <h2 className="text-4xl font-bold">Section Heading</h2>
                   <p className="mt-14">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
@@ -92,20 +92,20 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
-                <div className="w-1/2">
+                <div className="w-1/2 max-sm:w-full max-sm:order-1">
                   <Image src={p} className="h-full w-full" alt="Picture" />
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="py-20 bg-[#fefced]">
-            <div className="container flex mx-auto max-w-7xl lg:max-w-6xl md:max-w-3xl">
-              <div className="flex gap-40 items-center">
-                <div className="w-1/2">
+          <section className="py-20 bg-[#fefced] px-5">
+            <div className="container flex mx-auto max-w-7xl lg:max-w-6xl md:max-w-3xl max-sm:justify-center">
+              <div className="flex gap-40 items-center max-sm:flex-col max-sm:max-w-[420px] max-sm:gap-5">
+                <div className="w-1/2 max-sm:w-full">
                   <Image src={q} className="h-full w-full" alt="Picture" />
                 </div>
-                <div className="w-1/2">
+                <div className="w-1/2 max-sm:w-full">
                   <h2 className="text-4xl font-bold">Section Heading</h2>
                   <p className="mt-14">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
@@ -123,47 +123,47 @@ export default function Home() {
             </div>
           </section>
 
-          <div className=" bg-[#faf2b5] pt-24 pb-20">
-            <TestimonialSection></TestimonialSection>
+          <div className=" bg-[#faf2b5] pt-24 pb-20 px-5">
+            <TestimonialSection />
           </div>
 
-          <div className="bg-[#fefced]">
+          <div className="bg-[#fefced] px-5">
             <PricingSection />
           </div>
 
-          <section className="py-32">
-            <div className="mx-auto flex max-w-7xl lg:max-w-6xl md:max-w-3xl">
-              <div className="flex w-1/2 items-center">
-                <div className="py-20 pr-20">
+          <section className="py-32 px-5 max-sm:bg-gray-100 max-sm:py-20">
+            <div className="mx-auto flex max-w-7xl lg:max-w-6xl items-center md:max-w-3xl max-sm:flex-col max-sm:max-w-[420px] max-sm:gap-5">
+              <div className="flex w-1/2 max-sm:w-full max-sm:order-2 items-center">
+                <div className="py-20 pr-20 max-sm:py-0 max-sm:pr-0 max-sm:pt-5">
                   <h2 className="text-5xl font-bold">Get started!</h2>
                   <p className="mt-6">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
                   </p>
                   <div className="flex mt-6">
                     <Link href="/signup">
-                      <p className="text-accent py-4 px-8  bg-black hover:bg-gray-600 hover:text-accent-600">Sign up</p>
+                      <p className="text-accent py-4 px-8 bg-black hover:bg-gray-600 hover:text-accent-600">Sign up</p>
                     </Link>
                   </div>
                 </div>
               </div>
-              <div className="flex w-1/2 items-center">
+              <div className="flex w-1/2 max-sm:w-full max-sm:order-1 items-center">
                 <Image src={k} alt="Picture" />
               </div>
             </div>
           </section>
 
-          <section className='bg-[#fefced]'>
-            <div className="flex flex-col items-center justify-center w-screen py-24 mx-auto max-w-1xl lg:max-w-6xl md:max-w-3xl">
+          <section className='bg-[#fefced] px-5'>
+            <div className="flex flex-col items-center justify-center py-24 mx-auto max-w-1xl lg:max-w-6xl md:max-w-3xl">
               <div className="max-w-6xl">
                 <h2 className="text-5xl font-bold text-center bg-[#fefced]">What's new?</h2>
                 <p className="mt-6 bg-[#fefced] text-center mx-auto max-w-md">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar
                   tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
                 </p>
-                <div className="grid grid-cols-1 mx-auto max-md:mx-4 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div className="grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                   {
                     blogs.map(blog => (
-                      <div key={blog.title} className="flex flex-col border-solid border-gray-700 border bg-white p-4 justify-between">
+                      <div key={blog.title} className="flex flex-col border-solid border-gray-700 border bg-white p-4 justify-between max-w-[420px]">
                         <div className='p-12 text-center items-center'><Image src={blog.picture} alt="Blog" /></div>
                         <div className='pb-4'>
                           <p className='text-md'>{blog.category}</p>

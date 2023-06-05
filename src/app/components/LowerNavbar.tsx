@@ -11,38 +11,38 @@ const options = ['English', 'Spanish', 'Mandarin Chinese', 'Hindi', 'Arabic'];
 
 const LowerNavbar = () => {
   return (
-    <div className="bg-[#e2b2ff] text-gray-900 pt-20">
+    <div className="bg-[#e2b2ff] text-gray-900 pt-20 px-5">
       <div className="flex flex-col mx-auto max-w-7xl lg:max-w-6xl md:max-w-3xl">
-        <div className="flex flex-row items-start justify-between">
-          <div className="flex items-start justify-start md:justify-start">
+        <div className="flex flex-row items-start justify-between max-lg:grid max-lg:grid-cols-2 max-lg:gap-10">
+          <div className="flex items-start justify-start md:justify-start max-lg:order-1">
             <Image src={logo} alt="cat and dog" width={100} height={100} />
           </div>
-          <div className="">
+          <div className="max-lg:order-2">
             <p className="font-bold text-md">Products</p>
             <p className="mt-4 text-sm">Features</p>
             <p className="mt-3 text-sm">Pricing</p>
           </div>
-          <div className="">
+          <div className="max-lg:order-3">
             <p className="font-bold text-md">Resources</p>
             <p className="mt-4 text-sm">Blog</p>
             <p className="mt-3 text-sm">User Guides</p>
             <p className="mt-3 text-sm">Webinar</p>
           </div>
-          <div className="">
+          <div className="max-lg:order-4">
             <p className="font-bold text-md">Company</p>
             <p className="mt-4 text-sm">About</p>
             <p className="mt-3 text-sm">Join Us</p>
           </div>
-          <div className="">
+          <div className="max-lg:order-5 max-lg:col-span-2 max-w-[350px]">
             <p className="font-bold text-md">Subscribe to our newsletter</p>
             <p className="mt-1 text-xs">For product and service announcements and exclusive insights</p>
-            <div className="flex flex-col md:flex-row md:items-center mt-5">
+            <div className="flex items-center mt-5">
               <input
                 type="text"
                 placeholder="✉ Input your email"
-                className="px-2 py-1 focus:outline-none text-md w-[100%]"
+                className="px-2 py-1 focus:outline-none text-md flex-grow"
               />
-              <button className="text-accent bg-black hover:bg-gray-600 hover:text-accent-600 px-4 py-1 mt-2 md:mt-0">
+              <button className="text-accent bg-black hover:bg-gray-600 hover:text-accent-600 px-4 py-1 w-max min-w-[110px]">
                 Subscribe
               </button>
             </div>
@@ -53,7 +53,7 @@ const LowerNavbar = () => {
             <DropdownMenu options={options} placeholder="English" />
           </div>
           <div className="flex text-sm items-center gap-1 max-md:mt-4">
-            <p className="  hover: cursor-default">©2023 Pets.Inc</p>
+            <p className=" hover: cursor-default">©2023 Pets.Inc</p>
             <span className="text-black text-xs">&bull;</span>
             <Link href="/privacy">
               <p className=" hover:text-gray-600">Privacy</p>

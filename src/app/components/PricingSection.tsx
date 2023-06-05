@@ -107,7 +107,7 @@ const PricingSection: React.FC = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-8 mt-8 max-w-6xl">
         {
           plans.map(plan => (
-            <div key={plan.name} className={`flex flex-col bg-white justify-between p-6 pt-9 border-black ${plan.isPopular ? 'border-2 my-0' : 'my-5'}`}>
+            <div key={plan.name} className={`flex flex-col max-w-[420px] bg-white justify-between p-6 pt-9 border-black ${plan.isPopular ? 'border-2 my-0' : 'border my-5'}`}>
               <div>
                 <div className='flex items-center justify-between'>
                   <p className="text-4xl font-bold">{plan.name}</p>

@@ -83,23 +83,23 @@ const TestimonialSection: React.FC = () => {
 
   return (
     <div className="flex flex-col mx-auto items-center justify-center max-w-7xl lg:max-w-6xl md:max-w-3xl">
-      <div className="flex items-center flex-col h-xl">
+      <div className="flex items-center flex-col">
         <div className="h-16">
-         <Image src={testimonial.logo} alt="Logo" className="w-20" />
+          <Image src={testimonial.logo} alt="Logo" className="w-20" />
         </div>
         <p className="font-bold text-lg mt-5">Torquent</p>
-        <div className="flex items-center mt-10 h-20 gap-24">
+        <div className="flex items-center mt-10 gap-24">
           <button
-            className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center"
+            className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center max-sm:hidden"
             onClick={handlePrevTestimonial}
           >
             &lt;
           </button>
           <div className="flex-1 max-w-3xl">
-            <p className="text-center text-3xl">{testimonial.text}</p>
+            <p className="text-center text-3xl max-sm:text-sm">{testimonial.text}</p>
           </div>
           <button
-            className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center"
+            className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center max-sm:hidden"
             onClick={handleNextTestimonial}
           >
             &gt;
@@ -115,12 +115,27 @@ const TestimonialSection: React.FC = () => {
           />
         </div>
         <div className='ml-3'>
-          <span className="font-bold">{testimonial.fullName} - </span>
-          <span>{testimonial.jobTitle}</span>
+          <div>
+            <span className="font-bold">{testimonial.fullName} - </span>
+            <span>{testimonial.jobTitle}</span> 
+          </div>
         </div>
       </div>
+      <div className="hidden items-center mt-10 max-sm:flex gap-1">
+          <button
+            className="text-black text-1xl py-4 px-5 bg-black bg-opacity-5 text-center"
+            onClick={handlePrevTestimonial}
+          >
+            &lt;
+          </button>
+          <button
+            className="text-black text-1xl py-4 px-5 bg-black bg-opacity-5 text-center"
+            onClick={handleNextTestimonial}
+          >
+            &gt;
+          </button>
+        </div>
     </div>
-
   );
 };
 

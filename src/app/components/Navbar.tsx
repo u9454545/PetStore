@@ -1,5 +1,4 @@
 'use client';
-// components/Navbar.tsx
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,7 +26,7 @@ const Navbar = () => {
               </p>
             </Link>
           </div>
-          
+
           <div className="flex space-x-10">
             <Link href="/products">
               <p>
@@ -47,9 +46,8 @@ const Navbar = () => {
               <p className="hover:text-gray-600">Blog</p>
             </Link>
           </div>
-            
+
           <div className="hidden md:flex items-center space-x-5">
-            
             <Link href="/signin">
               <p className="hover:text-gray-600">Sign In</p>
             </Link>
@@ -90,7 +88,7 @@ const Navbar = () => {
               <p className="font-bold hover:text-gray-600 block">Products</p>
             </Link>
             <Link href="/pricing">
-              <p className="font-bold hover:text-gray-600 block">Pricing</p>
+            <p className="font-bold hover:text-gray-600 block">Pricing</p>
             </Link>
             <Link href="/about">
               <p className="font-bold hover:text-gray-600 block">About Us</p>
@@ -112,22 +110,31 @@ const Navbar = () => {
       </header>
 
       {/* Hero Section */}
-      <section
-        className="flex flex-col mt-16 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl"
-      >
+      <section className="flex flex-col mt-16 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl">
         <div className="flex flex-col max-w-3xl mx-auto gap-y-6">
           <h1 className="text-6xl font-bold text-center">Welcome to our Pet Store!</h1>
-          <h3 className="text-xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.</h3>
+          <h3 className="text-xl text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus.
+            Morbi sit amet sapien ac quam fermentum iaculis id at sem.
+          </h3>
           <div className="flex gap-5 items-center justify-center">
             <Link href="/join">
-              <p className="text-accent py-3 px-14 border-black border-solid border-2 bg-black hover:bg-gray-600 hover:border-gray-600">Join us now</p>
+              <p className="text-accent py-3 px-14 border-black border-solid border-2 bg-black hover:bg-gray-600 hover:border-gray-600">
+                Join us now
+              </p>
             </Link>
             <Link href="/demo">
-              <p className="text-black py-3 px-14 border-black border-solid border-2 hover:text-gray-600 hover:border-gray-600">Request demo</p>
+              <p className="text-black py-3 px-14 border-black border-solid border-2 hover:text-gray-600 hover:border-gray-600">
+                Request demo
+              </p>
             </Link>
           </div>
         </div>
-        <Image className="object-cover object-center h-full w-full mt-12" src={heroImage} alt="Hero Image" />
+        <Image
+          className="object-cover object-center h-full w-full mt-12"
+          src={heroImage}
+          alt="Hero Image"
+        />
       </section>
     </div>
   );

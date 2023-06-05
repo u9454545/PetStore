@@ -89,7 +89,7 @@ const PricingSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-[#fefced] py-28">
+    <div className="flex flex-col items-center justify-center py-28 mx-auto max-w-7xl lg:max-w-6xl md:max-w-3xl">
       <p className="text-5xl font-bold">Pricing</p>
       <p className="text-black-500 my-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <div className="flex flex-col bg-white p-2 md:flex-row space-y-4 md:space-y-0 md:space-x-4">
@@ -104,27 +104,32 @@ const PricingSection: React.FC = () => {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 bg-[#fefced] mt-8 max-w-6xl">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-8 mt-8 max-w-6xl">
         {
           plans.map(plan => (
-            <div key={plan.name} className={`flex flex-col bg-white p-6 pt-9 border-black ${plan.isPopular ? 'border-2 my-0' : 'my-5'}`}>
-              <p className="text-4xl font-bold">{plan.name}</p>
-              <p className='mt-2 text-sm'>{plan.description}</p>
-              <div className='flex mt-5 items-center'>
-                <span className='text-4xl font-bold'>${selectedOption === 'monthly' ? plan.valueMonth : plan.valueYear}</span><span className='ml-2'>/user/month</span>
+            <div key={plan.name} className={`flex flex-col bg-white justify-between p-6 pt-9 border-black ${plan.isPopular ? 'border-2 my-0' : 'my-5'}`}>
+              <div>
+                <div className='flex items-center justify-between'>
+                  <p className="text-4xl font-bold">{plan.name}</p>
+                  { plan.isPopular && <span className='text-xs text-white bg-black p-2 px-2 rounded-3xl'>Popular</span> }
+                </div>
+                <p className='mt-2 text-sm'>{plan.description}</p>
+                <div className='flex mt-5 items-center'>
+                  <span className='text-4xl font-bold'>${selectedOption === 'monthly' ? plan.valueMonth : plan.valueYear}</span><span className='ml-2'>/user/month</span>
+                </div>
+                <ul className='my-4 space-y-2'>
+                  {
+                    plan.features.map(feature => (
+                      <li key={feature.name} className='flex flex-row items-center'>
+                        {feature.included ? <CheckCircleIcon className="w-8 text-green-500" /> : <XMarkIcon className="w-8 text-red-500" />}
+                        <span className='text-sm ml-2'>{feature.name}</span>
+                        {feature.info ? <InformationCircleIcon className="ml-2 w-6 text-gray-600" aria-hidden="true" /> : null}
+                      </li>
+                    ))
+                  }
+                </ul>
               </div>
-              <ul className='my-4 space-y-2'>
-                {
-                  plan.features.map(feature => (
-                    <li key={feature.name} className='flex flex-row items-center'>
-                      {feature.included ? <CheckCircleIcon className="w-8 text-green-500" /> : <XMarkIcon className="w-8 text-red-500" />}
-                      <span className='text-sm ml-2'>{feature.name}</span>
-                      {feature.info ? <InformationCircleIcon className="ml-2 w-8 text-gray-600" aria-hidden="true" /> : null}
-                    </li>
-                  ))
-                }
-              </ul>
-              <button className={`border-black border-solid border my-4 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>Upgrade</button>
+              <button className={`border-black border-solid border mt-3 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>Upgrade</button>
             </div>))
         }
       </div>

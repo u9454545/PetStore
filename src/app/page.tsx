@@ -54,7 +54,7 @@ export default function Home() {
         <div>
           <section className="py-32">
             <div className="container mx-auto">
-              <h2 className="text-2xl text-center font-bold mb-6">Trusted by</h2>
+              <h2 className="text-2xl text-center font-bold my-14">Trusted by</h2>
               <div className="flex flex-wrap justify-center gap-6 md:gap-20">
                 <div className="w-28 md:w-auto">
                   <Image src={image} alt="Peta" width={100} height={50} />
@@ -76,7 +76,7 @@ export default function Home() {
           </section>
 
           <section className="py-10 bg-[#fefced]">
-            <div className="container mx-auto flex max-w-6xl">
+            <div className="container mx-auto flex max-w-7xl lg:max-w-6xl md:max-w-3xl">
               <div className="flex gap-40 items-center">
                 <div className="w-1/2">
                   <h2 className="text-4xl font-bold">Section Heading</h2>
@@ -100,7 +100,7 @@ export default function Home() {
           </section>
 
           <section className="py-20 bg-[#fefced]">
-            <div className="container mx-auto flex max-w-6xl">
+            <div className="container flex mx-auto max-w-7xl lg:max-w-6xl md:max-w-3xl">
               <div className="flex gap-40 items-center">
                 <div className="w-1/2">
                   <Image src={q} className="h-full w-full" alt="Picture" />
@@ -127,10 +127,12 @@ export default function Home() {
             <TestimonialSection></TestimonialSection>
           </div>
 
-          <PricingSection />
+          <div className="bg-[#fefced]">
+            <PricingSection />
+          </div>
 
           <section className="py-32">
-            <div className="mx-auto flex max-w-6xl">
+            <div className="mx-auto flex max-w-7xl lg:max-w-6xl md:max-w-3xl">
               <div className="flex w-1/2 items-center">
                 <div className="py-20 pr-20">
                   <h2 className="text-5xl font-bold">Get started!</h2>
@@ -150,41 +152,43 @@ export default function Home() {
             </div>
           </section>
 
-          <div className="flex flex-col items-center justify-center w-screen bg-[#fefced] py-24">
-            <div className="max-w-6xl">
-              <h2 className="text-5xl font-bold text-center bg-[#fefced]">What is new?</h2>
-              <p className="mt-6 bg-[#fefced] text-center mx-auto max-w-md">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar
-                tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
-              </p>
-              <div className="grid lg:grid-cols-3 gap-8 mt-8">
-                {
-                  blogs.map(blog => (
-                    <div key={blog.title} className="flex flex-col border-solid border-gray-700 border bg-white p-4 justify-between">
-                      <div className='p-12 text-center items-center'><Image src={blog.picture} alt="Blog" /></div>
-                      <div className='pb-4'>
-                        <p className='text-md'>{blog.category}</p>
-                        <h3 className="text-xl font-bold">{blog.title}</h3>
-                        <div className="flex justify-between items-center mt-4">
-                          <p className='text-sm'>Date</p>
-                          <div className="flex items-center rounded-full">
-                            <span className=" text-black text-xs px-2 py-1 border-solid border-gray-700 border rounded-full">{blog.date}</span>
+          <section className='bg-[#fefced]'>
+            <div className="flex flex-col items-center justify-center w-screen py-24 mx-auto max-w-1xl lg:max-w-6xl md:max-w-3xl">
+              <div className="max-w-6xl">
+                <h2 className="text-5xl font-bold text-center bg-[#fefced]">What's new?</h2>
+                <p className="mt-6 bg-[#fefced] text-center mx-auto max-w-md">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar
+                  tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.
+                </p>
+                <div className="grid grid-cols-1 mx-auto max-md:mx-4 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                  {
+                    blogs.map(blog => (
+                      <div key={blog.title} className="flex flex-col border-solid border-gray-700 border bg-white p-4 justify-between">
+                        <div className='p-12 text-center items-center'><Image src={blog.picture} alt="Blog" /></div>
+                        <div className='pb-4'>
+                          <p className='text-md'>{blog.category}</p>
+                          <h3 className="text-xl font-bold">{blog.title}</h3>
+                          <div className="flex justify-between items-center mt-4">
+                            <p className='text-sm'>Date</p>
+                            <div className="flex items-center rounded-full">
+                              <span className=" text-black text-xs px-2 py-1 border-solid border-gray-700 border rounded-full">{blog.date}</span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))
-                }
-              </div>
-              <div className="flex justify-center">
-                <Link href="/more_articles">
-                  <p className="text-accent py-2 px-4 mt-14 bg-black hover:bg-gray-600 hover:text-accent-600">See more articles</p>
-                </Link>
+                    ))
+                  }
+                </div>
+                <div className="flex justify-center">
+                  <Link href="/more_articles">
+                    <p className="text-accent py-2 px-4 mt-14 bg-black hover:bg-gray-600 hover:text-accent-600">See more articles</p>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <LowerNavbar></LowerNavbar>
+          <LowerNavbar />
         </div>
       </div>
 

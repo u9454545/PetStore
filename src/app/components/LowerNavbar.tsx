@@ -3,75 +3,79 @@ import Link from "next/link";
 import Image from 'next/image'
 import DropdownMenu from '../components/DropdownMenu';
 import logo from '../components/logo.png'
+import fbLogo from './icons/fb.svg';
+import linkedInLogo from './icons/linkedIn.svg';
+import youtubeLogo from './icons/youtube.svg';
 
 const options = ['English', 'Spanish', 'Mandarin Chinese', 'Hindi', 'Arabic'];
 
 const LowerNavbar = () => {
   return (
-    <>
-      <div className="bg-[#e2b2ff] text-gray-900">
-      <div className="flex items-center justify-center md:justify-start">
-          <Image src={logo} alt="cat and dog" width={100} height={100} />
-        </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-4 px-8 gap-4">
-        
-        <div className="md:space-y-2">
-          <p className="font-bold">Products</p>
-          <p>Features</p>
-          <p>Pricing</p>
-        </div>
-        <div className="md:space-y-2">
-          <p className="font-bold">Resources</p>
-          <p>Blog</p>
-          <p>User Guides</p>
-        </div>
-        <div className="md:space-y-2">
-          <p className="font-bold">Company</p>
-          <p>About</p>
-          <p>Join Us</p>
-        </div>
-        <div className="md:space-y-2">
-          <p className="font-bold">Subscribe to Our Newsletter</p>
-          <p>For product and service announcements and exclusive insights</p>
-          <div className="flex flex-col md:flex-row md:items-center">
-            <input
-              type="text"
-              placeholder="✉ Input your email"
-              className="rounded-l px-2 py-1 focus:outline-none"
-            />
-            <button className="bg-blue-500 text-white px-4 py-1 rounded-r mt-2 md:mt-0">
-              Subscribe
-            </button>
+    <div className="bg-[#e2b2ff] text-gray-900 pt-20">
+      <div className="flex flex-col mx-auto max-w-7xl lg:max-w-6xl md:max-w-3xl">
+        <div className="flex flex-row items-start justify-between">
+          <div className="flex items-start justify-start md:justify-start">
+            <Image src={logo} alt="cat and dog" width={100} height={100} />
+          </div>
+          <div className="">
+            <p className="font-bold text-md">Products</p>
+            <p className="mt-4 text-sm">Features</p>
+            <p className="mt-3 text-sm">Pricing</p>
+          </div>
+          <div className="">
+            <p className="font-bold text-md">Resources</p>
+            <p className="mt-4 text-sm">Blog</p>
+            <p className="mt-3 text-sm">User Guides</p>
+            <p className="mt-3 text-sm">Webinar</p>
+          </div>
+          <div className="">
+            <p className="font-bold text-md">Company</p>
+            <p className="mt-4 text-sm">About</p>
+            <p className="mt-3 text-sm">Join Us</p>
+          </div>
+          <div className="">
+            <p className="font-bold text-md">Subscribe to our newsletter</p>
+            <p className="mt-1 text-xs">For product and service announcements and exclusive insights</p>
+            <div className="flex flex-col md:flex-row md:items-center mt-5">
+              <input
+                type="text"
+                placeholder="✉ Input your email"
+                className="px-2 py-1 focus:outline-none text-md w-[100%]"
+              />
+              <button className="text-accent bg-black hover:bg-gray-600 hover:text-accent-600 px-4 py-1 mt-2 md:mt-0">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div className="shadow flex flex-col md:flex-row justify-between py-4 px-8 bg-[#e2b2ff]">
-      <div className="p-2">
-        <DropdownMenu options={options} placeholder="English" />
-      </div>
-     
-    <div className="flex justify items-center space-x-4 ml-1 mx-auto">
-      <p className="font-bold hover:text-gray-600">©2023 Pets.Inc</p>
-      <Link href="/privacy">
-        <p className="font-bold hover:text-gray-600">Privacy</p>
-      </Link>
-      <Link href="/terms">
-        <p className="font-bold hover:text-gray-600">Terms</p>
-      </Link>
-      <Link href="/sitemap">
-        <p className="font-bold hover:text-gray-600">Sitemap</p>
-      </Link>
-    
-  </div>
-      <div className="flex items-center mt-4 md:mt-0 ml-auto">
-  {/* <Image src="/path/to/logo1.png" alt="Logo 1" width={24} height={24} />
-  <Image src="/path/to/logo2.png" alt="Logo 2" width={24} height={24} />
-  <Image src="/path/to/logo3.png" alt="Logo 3" width={24} height={24} /> */}
-</div>
+        <div className="flex flex-wrap flex-col md:flex-row lg:flex-row text-sm justify-between items-center py-4 mt-12 border-t border-t-solid border-t-[#fefced]">
+          <div className="bg-[#fefced] py-2 px-4">
+            <DropdownMenu options={options} placeholder="English" />
+          </div>
+          <div className="flex text-sm items-center gap-1 max-md:mt-4">
+            <p className="  hover: cursor-default">©2023 Pets.Inc</p>
+            <span className="text-black text-xs">&bull;</span>
+            <Link href="/privacy">
+              <p className=" hover:text-gray-600">Privacy</p>
+            </Link>
+            <span className="text-black text-xs">&bull;</span>
+            <Link href="/terms">
+              <p className=" hover:text-gray-600">Terms</p>
+            </Link>
+            <span className="text-black text-xs">&bull;</span>
+            <Link href="/sitemap">
+              <p className=" hover:text-gray-600">Sitemap</p>
+            </Link>
+          </div>
+          <div className="flex gap-4 max-md:mt-4">
+            <Image src={fbLogo} width="24" alt="Follow us on Facebook" />
+            <Image src={linkedInLogo} width="24" alt="Follow us on LinkedIn" />
+            <Image src={youtubeLogo} width="24" alt="Follow us on Youtube" />
+          </div>
 
+        </div>
+      </div>
     </div>
-    </>
   );
 };
 

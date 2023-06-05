@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <header className="sticky top-0 z-50 bg-[#e2b2ff]">
         <nav className="flex items-center justify-between py-4 px-8">
           <div className="flex items-center space-x-4">
@@ -113,7 +113,7 @@ const Navbar = () => {
 
       {/* Hero Section */}
       <section
-        className="flex flex-col mt-16 max-w-5xl mx-auto items-center"
+        className="flex flex-col mt-16 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl"
       >
         <div className="flex flex-col max-w-3xl mx-auto gap-y-6">
           <h1 className="text-6xl font-bold text-center">Welcome to our Pet Store!</h1>

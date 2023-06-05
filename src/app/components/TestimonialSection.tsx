@@ -82,7 +82,7 @@ const TestimonialSection: React.FC = () => {
   const testimonial = testimonials[currentTestimonial];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col mx-auto items-center justify-center max-w-7xl lg:max-w-6xl md:max-w-3xl">
       <div className="flex items-center flex-col h-xl">
         <div className="h-16">
          <Image src={testimonial.logo} alt="Logo" className="w-20" />

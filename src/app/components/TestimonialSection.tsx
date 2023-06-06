@@ -4,9 +4,9 @@ import Image from 'next/image'
 import john from './john.png'
 import johncompany from './john_company.png'
 import alex from './alex.png'
-import alexcompany from './alex_company.jpeg'
+import alexcompany from './alex_company.png'
 import jane from './jane.png'
-import janecompany from './jane_company.jpg'
+import janecompany from './jane_company.png'
 import micheal from './rsz_micheal.png'
 import michealcomapny from './micheal_company.png'
 import sarah from './sarah.png'
@@ -112,6 +112,7 @@ const TestimonialSection: React.FC = () => {
             src={testimonial.profilePic}
             alt="Profile"
             className="w-12 h-12 rounded-full mr-2"
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <div className='ml-3'>

@@ -123,13 +123,22 @@ const PricingSection: React.FC = () => {
                       <li key={feature.name} className='flex flex-row items-center'>
                         {feature.included ? <CheckCircleIcon className="w-8 text-green-500" /> : <XMarkIcon className="w-8 text-red-500" />}
                         <span className='text-sm ml-2'>{feature.name}</span>
-                        {feature.info ? <InformationCircleIcon className="ml-2 w-6 text-gray-600" aria-hidden="true" /> : null}
+                        {feature.info ? (
+  <div className="relative inline-block group">
+    <InformationCircleIcon className="ml-2 w-6 text-gray-600" aria-hidden="true" />
+    <div className="hidden group-hover:block absolute bg-white p-2 rounded-md shadow-lg">
+      <p className="text-gray-800 text-sm">{feature.info}</p>
+    </div>
+  </div>
+) : null}
+
                       </li>
                     ))
                   }
                 </ul>
               </div>
-              <button className={`border-black border-solid border mt-3 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>Upgrade</button>
+              <button className={`border-black border-solid border mt-3 py-2 ${plan.isPopular ? 'bg-black text-accent hover:bg-gray-600 border-gray-600' : ''}`}>{plan.name === 'Organization' ? 'Contact Sale' : 'Upgrade'}</button>
+
             </div>))
         }
       </div>

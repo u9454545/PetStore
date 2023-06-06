@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/*
+*{
+  border: 1px solid black;
+}
+*/
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start: '#fefced';

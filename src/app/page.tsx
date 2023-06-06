@@ -1,3 +1,4 @@
+'use client';
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -16,6 +17,9 @@ import p from './components/petswithowners.jpg'
 import q from './components/vet.jpg'
 import k from './components/dog-and-cat.jpg'
 import App2 from './components/App2'
+
+
+
 
 interface Blog {
   title: string,
@@ -132,7 +136,7 @@ export default function Home() {
           </div>
 
           <section className="py-32 px-5 max-sm:bg-gray-100 max-sm:py-20">
-            <div className="mx-auto flex max-w-7xl lg:max-w-6xl items-center md:max-w-3xl max-sm:flex-col max-sm:max-w-[420px] max-sm:gap-5">
+            <div className="mx-auto flex max-w-7xl lg:max-w-6xl items-center md:max-w-3xl max-sm:flex-col max-sm:max-w-[420px] max-sm:gap-5 border border-gray-300 ">
               <div className="flex w-1/2 max-sm:w-full max-sm:order-2 items-center">
                 <div className="py-20 pr-20 max-sm:py-0 max-sm:pr-0 max-sm:pt-5">
                   <h2 className="text-5xl font-bold">Get started!</h2>
@@ -169,9 +173,9 @@ export default function Home() {
                           <p className='text-md'>{blog.category}</p>
                           <h3 className="text-xl font-bold">{blog.title}</h3>
                           <div className="flex justify-between items-center mt-4">
-                            <p className='text-sm'>Date</p>
+                            <p className='text-sm'>{blog.date}</p>
                             <div className="flex items-center rounded-full">
-                              <span className=" text-black text-xs px-2 py-1 border-solid border-gray-700 border rounded-full">{blog.date}</span>
+                              <span className=" text-black text-xs px-2 py-1 border-solid border-gray-700 border rounded-full">2:30</span>
                             </div>
                           </div>
                         </div>

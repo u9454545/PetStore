@@ -16,7 +16,9 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
   const dropdownRef = useRef(null)
   const timeoutDuration = 200
 
-  const openMenu = () => buttonRef?.current.click()
+  
+  const openMenu = () => buttonRef?.current?.click();
+
   const closeMenu = () =>
     dropdownRef?.current?.dispatchEvent(
       new KeyboardEvent('keydown', {

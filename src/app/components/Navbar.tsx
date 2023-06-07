@@ -23,13 +23,13 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <Link href="/">
               <p>
-                <Image src={logo} alt="Peta" width={100} height={50} />
+                <Image src={logo} alt="Peta" width={100} height={50} className='w-100 max-sm:w-[50px]' />
               </p>
             </Link>
           </div>
           
           <div className="hidden md:flex space-x-10">
-            <Link href="/products">
+            <Link href="/products" onClick={e => e.preventDefault()}>
               <p>
                 <DropdownMenu options={options} placeholder="Products" />
               </p>
@@ -113,17 +113,17 @@ const Navbar = () => {
 
       {/* Hero Section */}
       <section
-        className="flex flex-col mt-16 px-5 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl"
+        className="flex flex-col mt-16 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl max-sm:mt-12 w-full px-5 md:px-0"
       >
         <div className="flex flex-col max-w-3xl mx-auto gap-y-6">
-          <h1 className="text-6xl font-bold text-center">Welcome to our Pet Store!</h1>
+          <h1 className="text-6xl max-xs:text-4xl font-bold text-center">Welcome to our Pet Store!</h1>
           <h3 className="text-xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.</h3>
-          <div className="flex gap-5 items-center justify-center">
-            <Link href="/join">
-              <p className="text-accent py-3 px-14 border-black border-solid border-2 bg-black hover:bg-gray-600 hover:border-gray-600 max-sm:text-sm max-sm:w-max max-sm:px-5 max-sm:min-w-[120px]">Join us now</p>
+          <div className="flex gap-5 items-center justify-center max-sm:gap-2 max-sm:flex-col">
+            <Link href="/join" className='max-sm:w-[100%] text-center'>
+              <p className="text-accent py-3 px-14 border-black border-solid border-2 max-sm:border bg-black hover:bg-gray-600 hover:border-gray-600 max-sm:px-5">Join us now</p>
             </Link>
-            <Link href="/demo">
-              <p className="text-black py-3 px-14 border-black border-solid border-2 hover:text-gray-600 hover:border-gray-600 max-sm:text-sm max-sm:w-max max-sm:px-5 max-sm:min-w-[120px]">Request demo</p>
+            <Link href="/demo" className='max-sm:w-[100%] text-center'>
+              <p className="text-black py-3 px-14 border-black border-solid border-2 max-sm:border hover:text-gray-600 hover:border-gray-600 max-sm:px-5">Request demo</p>
             </Link>
           </div>
         </div>

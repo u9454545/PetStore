@@ -33,16 +33,16 @@ const LowerNavbar = () => {
             <p className="mt-4 text-sm">About</p>
             <p className="mt-3 text-sm">Join Us</p>
           </div>
-          <div className="max-lg:order-5 max-lg:col-span-2 max-w-[350px]">
+          <div className="max-lg:order-5 max-lg:col-span-2 max-xs:max-w-[100%] max-w-[350px]">
             <p className="font-bold text-md">Subscribe to our newsletter</p>
             <p className="mt-1 text-xs">For product and service announcements and exclusive insights</p>
-            <div className="flex items-center mt-5">
+            <div className="flex items-center mt-5 max-xs:flex-col max-xs:gap-2">
               <input
                 type="text"
                 placeholder="✉ Input your email"
-                className="px-2 py-1 focus:outline-none text-md flex-grow"
+                className="px-2 py-1 focus:outline-none text-md flex-grow max-xs:w-[100%]"
               />
-              <button className="text-accent bg-black hover:bg-gray-600 hover:text-accent-600 px-4 py-1 w-max min-w-[110px]">
+              <button className="text-accent bg-black hover:bg-gray-600 hover:text-accent-600 px-4 py-1 w-max min-w-[110px] max-xs:flex max-xs:mx-0 max-xs:w-[100%] justify-center">
                 Subscribe
               </button>
             </div>
@@ -52,20 +52,22 @@ const LowerNavbar = () => {
           <div className="bg-[#fefced] py-2 px-4">
             <DropdownMenu options={options} placeholder="English" />
           </div>
-          <div className="flex text-sm items-center gap-1 max-md:mt-4">
-            <p className=" hover: cursor-default">©2023 Pets.Inc</p>
-            <span className="text-black text-xs">&bull;</span>
-            <Link href="/privacy">
-              <p className=" hover:text-gray-600">Privacy</p>
-            </Link>
-            <span className="text-black text-xs">&bull;</span>
-            <Link href="/terms">
-              <p className=" hover:text-gray-600">Terms</p>
-            </Link>
-            <span className="text-black text-xs">&bull;</span>
-            <Link href="/sitemap">
-              <p className=" hover:text-gray-600">Sitemap</p>
-            </Link>
+          <div className="flex text-sm items-center gap-1 max-md:mt-4 max-sm:flex-col max-sm:mt-5">
+            <p className="hover: cursor-default max-sm:block">©2023 Pets.Inc</p>
+            <div className="flex items-center gap-1">
+              <span className="text-black text-xs max-sm:hidden">&bull;</span>
+              <Link href="/privacy">
+                <p className=" hover:text-gray-600">Privacy</p>
+              </Link>
+              <span className="text-black text-xs">&bull;</span>
+              <Link href="/terms">
+                <p className=" hover:text-gray-600">Terms</p>
+              </Link>
+              <span className="text-black text-xs">&bull;</span>
+              <Link href="/sitemap">
+                <p className=" hover:text-gray-600">Sitemap</p>
+              </Link>
+            </div>
           </div>
           <div className="flex gap-4 max-md:mt-4">
             <Image src={fbLogo} width="24" alt="Follow us on Facebook" />

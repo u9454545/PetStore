@@ -1,18 +1,18 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
-import john from './john.png'
+import john from './john-copy.png'
 import johncompany from './john_company.png'
-import alex from './alex.png'
+import alex from './alex-copy.png'
 import alexcompany from './alex_company.png'
-import jane from './jane.png'
+import jane from './jane-copy.png'
 import janecompany from './jane_company.png'
-import micheal from './rsz_micheal.png'
+import micheal from './micheal-copy.png'
 import michealcomapny from './micheal_company.png'
-import sarah from './sarah.png'
+import sarah from './sarah-copy.png'
 import sarahcompany from './sarah_company.png'
-
-
+import { ChevronLeftIcon } from '@heroicons/react/24/solid';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 
 
 const TestimonialSection: React.FC = () => {
@@ -93,49 +93,60 @@ const TestimonialSection: React.FC = () => {
             className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center max-sm:hidden"
             onClick={handlePrevTestimonial}
           >
-            &lt;
+            <ChevronLeftIcon
+              className="h-5 w-5 scale-150 stroke-0 stroke-black hover:stroke-current"
+              aria-hidden="true"
+            />
           </button>
-          <div className="flex-1 max-w-3xl">
-            <p className="text-center text-3xl max-sm:text-sm">{testimonial.text}</p>
+          <div className="flex-1 max-w-3xl max-xs:h-[150px] max-sm:h-[150px] max-md:h-[180px] md:h-[200px] lg:h-[150px]">
+            <p className="text-center text-3xl max-xs:text-lg max-md:text-2xl text-ellipsis">{testimonial.text}</p>
           </div>
           <button
             className="text-black text-1xl py-5 px-6 bg-black bg-opacity-5 text-center max-sm:hidden"
             onClick={handleNextTestimonial}
           >
-            &gt;
+            <ChevronRightIcon
+              className="h-5 w-5 scale-150 stroke-0 stroke-black hover:stroke-current"
+              aria-hidden="true"
+            />
           </button>
         </div>
       </div>
-      <div className="flex items-center mt-10">
+      <div className="flex items-center">
         <div>
           <Image
             src={testimonial.profilePic}
             alt="Profile"
             className="w-12 h-12 rounded-full mr-2"
-            style={{ objectFit: 'cover' }}
           />
         </div>
         <div className='ml-3'>
           <div>
             <span className="font-bold">{testimonial.fullName} - </span>
-            <span>{testimonial.jobTitle}</span> 
+            <span>{testimonial.jobTitle}</span>
           </div>
         </div>
       </div>
       <div className="hidden items-center mt-10 max-sm:flex gap-1">
-          <button
-            className="text-black text-1xl py-4 px-5 bg-black bg-opacity-5 text-center"
-            onClick={handlePrevTestimonial}
-          >
-            &lt;
-          </button>
-          <button
-            className="text-black text-1xl py-4 px-5 bg-black bg-opacity-5 text-center"
-            onClick={handleNextTestimonial}
-          >
-            &gt;
-          </button>
-        </div>
+        <button
+          className="text-black text-1xl py-4 px-5 bg-black bg-opacity-5 text-center"
+          onClick={handlePrevTestimonial}
+        >
+          <ChevronLeftIcon
+            className="h-5 w-5 scale-150 stroke-0 stroke-black hover:stroke-current"
+            aria-hidden="true"
+          />
+        </button>
+        <button
+          className="text-black text-1xl py-4 px-5 bg-black bg-opacity-5 text-center"
+          onClick={handleNextTestimonial}
+        >
+          <ChevronRightIcon
+            className="h-5 w-5 scale-150 stroke-0 stroke-black hover:stroke-current"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
     </div>
   );
 };

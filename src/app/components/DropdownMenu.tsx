@@ -12,16 +12,13 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
   const [selectedOption, setSelectedOption] = useState('');
   let timeout: any;
 
- 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
-  const dropdownRef = useRef<HTMLButtonElement | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null); // Updated type to HTMLDivElement
 
-  const timeoutDuration = 200
- 
+  const timeoutDuration = 200;
 
-  
   const openMenu = () => buttonRef?.current?.click();
-  
+
   const closeMenu = () =>
     dropdownRef?.current?.dispatchEvent(
       new KeyboardEvent('keydown', {
@@ -29,16 +26,16 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
         bubbles: true,
         cancelable: true,
       })
-    )
+    );
 
-    const onMouseEnter = (closed: boolean) => {
-      clearTimeout(timeout)
-      closed && openMenu()
-    }
-    
+  const onMouseEnter = (closed: boolean) => {
+    clearTimeout(timeout);
+    closed && openMenu();
+  };
+
   const onMouseLeave = (open: boolean) => {
-    open && (timeout = setTimeout(() => closeMenu(), timeoutDuration))
-  }
+    open && (timeout = setTimeout(() => closeMenu(), timeoutDuration));
+  };
 
   return (
     <Menu>

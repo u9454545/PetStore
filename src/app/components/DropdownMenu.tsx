@@ -12,13 +12,16 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
   const [selectedOption, setSelectedOption] = useState('');
   let timeout: any;
 
-  const buttonRef = useRef(null)
-  const dropdownRef = useRef(null)
+ 
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const dropdownRef = useRef<HTMLButtonElement | null>(null);
+
   const timeoutDuration = 200
+ 
 
   
   const openMenu = () => buttonRef?.current?.click();
-
+  
   const closeMenu = () =>
     dropdownRef?.current?.dispatchEvent(
       new KeyboardEvent('keydown', {
@@ -28,11 +31,12 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
       })
     )
 
-  const onMouseEnter = closed => {
-    clearTimeout(timeout)
-    closed && openMenu()
-  }
-  const onMouseLeave = open => {
+    const onMouseEnter = (closed: boolean) => {
+      clearTimeout(timeout)
+      closed && openMenu()
+    }
+    
+  const onMouseLeave = (open: boolean) => {
     open && (timeout = setTimeout(() => closeMenu(), timeoutDuration))
   }
 
@@ -63,7 +67,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
           >
             <Menu.Items
               ref={dropdownRef}
-              onMouseEnter={() => onMouseEnter()}
+              onMouseEnter={() => onMouseEnter(!open)}
               onMouseLeave={() => onMouseLeave(open)}
               static
               className="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"

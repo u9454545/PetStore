@@ -16,6 +16,7 @@ import p from './components/petswithowners.jpg'
 import q from './components/vet.jpg'
 import k from './components/dog-and-cat.jpg'
 import App2 from './components/App2'
+import heroImage from './components/slide-01.jpg';
 
 interface Blog {
   title: string,
@@ -56,6 +57,24 @@ export default function Home() {
       <div className="relative bg-[#fefced] bg-hero bg-no-repeat bg-cover bg-center h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[1400px]">
       <div>
         <Navbar />
+         {/* Hero Section */}
+      <section
+        className="flex flex-col mt-16 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl max-sm:mt-12 w-full px-5 md:px-0"
+      >
+        <div className="flex flex-col max-w-3xl mx-auto gap-y-6">
+          <h1 className="text-6xl max-xs:text-4xl font-bold text-center">Welcome to our Pet Store!</h1>
+          <h3 className="text-xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.</h3>
+          <div className="flex gap-5 items-center justify-center max-sm:gap-2 max-sm:flex-col">
+            <Link href="/join" className='max-sm:w-[100%] text-center'>
+              <p className="text-accent py-3 px-14 border-black border-solid border-2 max-sm:border bg-black hover:bg-gray-600 hover:border-gray-600 max-sm:px-5">Join us now</p>
+            </Link>
+            <Link href="/demo" className='max-sm:w-[100%] text-center'>
+              <p className="text-black py-3 px-14 border-black border-solid border-2 max-sm:border hover:text-gray-600 hover:border-gray-600 max-sm:px-5">Request demo</p>
+            </Link>
+          </div>
+        </div>
+        <Image className="object-cover object-center h-full w-full mt-12" src={heroImage} alt="Hero Image" />
+      </section>
         
           <section className="py-32 max-sm:py-16">
             <div className="container mx-auto px-5">

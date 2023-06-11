@@ -26,8 +26,8 @@ const Navbar = () => {
           </div>
   */
   return (
-    <div className="flex flex-col">
-      <header className="sticky top-0 z-50 bg-[#e2b2ff] h-13">
+
+      <header className="flex flex-col sticky top-0 z-50 bg-[#e2b2ff] h-13">
         <nav className="flex items-center justify-between py-4 px-8">
         
             <Link href="/">
@@ -120,25 +120,8 @@ const Navbar = () => {
         )}
       </header>
 
-      {/* Hero Section */}
-      <section
-        className="flex flex-col mt-16 mx-auto items-center max-w-7xl lg:max-w-6xl md:max-w-3xl max-sm:mt-12 w-full px-5 md:px-0"
-      >
-        <div className="flex flex-col max-w-3xl mx-auto gap-y-6">
-          <h1 className="text-6xl max-xs:text-4xl font-bold text-center">Welcome to our Pet Store!</h1>
-          <h3 className="text-xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at risus euismod, hendrerit turpis id, pulvinar tellus. Morbi sit amet sapien ac quam fermentum iaculis id at sem.</h3>
-          <div className="flex gap-5 items-center justify-center max-sm:gap-2 max-sm:flex-col">
-            <Link href="/join" className='max-sm:w-[100%] text-center'>
-              <p className="text-accent py-3 px-14 border-black border-solid border-2 max-sm:border bg-black hover:bg-gray-600 hover:border-gray-600 max-sm:px-5">Join us now</p>
-            </Link>
-            <Link href="/demo" className='max-sm:w-[100%] text-center'>
-              <p className="text-black py-3 px-14 border-black border-solid border-2 max-sm:border hover:text-gray-600 hover:border-gray-600 max-sm:px-5">Request demo</p>
-            </Link>
-          </div>
-        </div>
-        <Image className="object-cover object-center h-full w-full mt-12" src={heroImage} alt="Hero Image" />
-      </section>
-    </div>
+     
+    
   );
 };
 

@@ -1,5 +1,5 @@
 'use client';
-import { Fragment, useState, useRef } from 'react';
+import { Fragment, useState, useRef, useEffect } from 'react';
 import { Transition, Menu } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
@@ -41,14 +41,39 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
   const getMenuStyle = () => {
     if (dropUp) {
       return {
+        bottom: 'calc(100% + 0.5rem)',
         top: 'auto',
-        bottom: '100%',
-        marginTop: '-0.5rem',
+        marginBottom: '0.5rem',
       };
     } else {
       return {};
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (dropdownRef.current && buttonRef.current) {
+        const { top, bottom } = dropdownRef.current.getBoundingClientRect();
+        const { bottom: buttonBottom } = buttonRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (dropUp && top < 0 && buttonBottom > windowHeight) {
+          dropdownRef.current.style.top = 'auto';
+          dropdownRef.current.style.bottom = 'calc(100% + 0.5rem)';
+        } else if (!dropUp && bottom > windowHeight) {
+          dropdownRef.current.style.top = 'calc(100% + 0.5rem)';
+          dropdownRef.current.style.bottom = 'auto';
+        } else {
+          dropdownRef.current.style.top = 'auto';
+          dropdownRef.current.style.bottom = 'auto';
+        }
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [dropUp]);
 
   return (
     <Menu>
@@ -95,21 +120,21 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
                         onClick={() => setSelectedOption(option)}
                         className={`${
                           active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                        } group flex rounded-md items-center w-full px-2  py-2 text-sm`}
-                        >
-                          {option}
-                        </button>
-                      )}
-                    </Menu.Item>
-                  ))}
-                </div>
-              </Menu.Items>
-            </Transition>
-          </>
-        )}
-      </Menu>
-    );
-  };
-  
-  export default Dropdown;
-  
+                        } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      >
+                        {option}
+                      </button>
+                    )}
+                  </Menu.Item>
+                ))}
+              </div>
+            </Menu.Items>
+          </Transition>
+        </>
+      )}
+    </Menu>
+  );
+};
+
+export default Dropdown;
+

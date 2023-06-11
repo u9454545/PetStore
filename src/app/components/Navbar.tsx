@@ -16,17 +16,26 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  return (
-    <div className="flex flex-col">
-      <header className="sticky top-0 z-50 bg-[#e2b2ff]">
-        <nav className="flex items-center justify-between py-4 px-8">
-          <div className="flex items-center space-x-4">
+  /*
+  <div className="flex items-center space-x-4">
             <Link href="/">
               <p>
                 <Image src={logo} alt="Peta" width={100} height={50} className='w-100 max-sm:w-[50px]' />
               </p>
             </Link>
           </div>
+  */
+  return (
+    <div className="flex flex-col">
+      <header className="sticky top-0 z-50 bg-[#e2b2ff] h-13">
+        <nav className="flex items-center justify-between py-4 px-8">
+        
+            <Link href="/">
+              <p>
+                <Image src={logo} alt="Peta" width={75} height={25}  />
+              </p>
+            </Link>
+          
           
           <div className="hidden md:flex space-x-10">
             <Link href="/products" onClick={e => e.preventDefault()}>

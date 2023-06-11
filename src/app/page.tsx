@@ -54,8 +54,9 @@ export default function Home() {
 
     <div className="relative">
       <div className="relative bg-[#fefced] bg-hero bg-no-repeat bg-cover bg-center h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[1400px]">
+      <div>
         <Navbar />
-        <div>
+        
           <section className="py-32 max-sm:py-16">
             <div className="container mx-auto px-5">
               <h2 className="text-2xl text-center font-bold my-14 max-sm:my-8">Trusted by</h2>
@@ -195,7 +196,7 @@ export default function Home() {
           <LowerNavbar />
         </div>
       </div>
-
+     
     </div>
   );
 }

@@ -50,7 +50,7 @@ const LowerNavbar = () => {
         </div>
         <div className="flex flex-wrap flex-col md:flex-row lg:flex-row text-sm justify-between items-center py-4 mt-12 border-t border-t-solid border-t-[#fefced]">
           <div className="bg-[#fefced] py-2 px-4">
-            <DropdownMenu options={options} placeholder="English" />
+          <DropdownMenu options={options} placeholder="English" dropUp={true} />
           </div>
           <div className="flex text-sm items-center gap-1 max-md:mt-4 max-sm:flex-col max-sm:mt-5">
             <p className="hover: cursor-default max-sm:block">©2023 Pets.Inc</p>

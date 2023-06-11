@@ -6,14 +6,15 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 interface DropdownProps {
   options: string[];
   placeholder: string;
+  dropUp?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = false }) => {
   const [selectedOption, setSelectedOption] = useState('');
   let timeout: any;
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
-  const dropdownRef = useRef<HTMLDivElement | null>(null); // Updated type to HTMLDivElement
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const timeoutDuration = 200;
 
@@ -37,15 +38,31 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
     open && (timeout = setTimeout(() => closeMenu(), timeoutDuration));
   };
 
+  const getMenuStyle = () => {
+    if (dropUp) {
+      return {
+        top: 'auto',
+        bottom: '100%',
+        marginTop: '-0.5rem',
+      };
+    } else {
+      return {};
+    }
+  };
+
   return (
     <Menu>
       {({ open }) => (
         <>
-          <span 
+          <span
             onClick={openMenu}
             onMouseEnter={() => onMouseEnter(!open)}
-            onMouseLeave={() => onMouseLeave(open)}>
-            <Menu.Button ref={buttonRef} className="inline-flex justify-center items-center w-full p-0 shadow-none font text-black hover:text-gray-600 rounded-md focus:outline-none">
+            onMouseLeave={() => onMouseLeave(open)}
+          >
+            <Menu.Button
+              ref={buttonRef}
+              className="inline-flex justify-center items-center w-full p-0 shadow-none font text-black hover:text-gray-600 rounded-md focus:outline-none"
+            >
               {selectedOption !== '' ? selectedOption : placeholder}
               <ChevronDownIcon
                 className="ml-3 h-5 w-5 scale-150 stroke-0 stroke-black hover:stroke-current"
@@ -68,6 +85,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
               onMouseLeave={() => onMouseLeave(open)}
               static
               className="absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              style={getMenuStyle()}
             >
               <div className="px-1 py-1">
                 {options.map((option) => (
@@ -75,21 +93,23 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
                     {({ active }) => (
                       <button
                         onClick={() => setSelectedOption(option)}
-                        className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                          } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                      >
-                        {option}
-                      </button>
-                    )}
-                  </Menu.Item>
-                ))}
-              </div>
-            </Menu.Items>
-          </Transition>
-        </>
-      )}
-    </Menu>
-  );
-};
-
-export default Dropdown;
+                        className={`${
+                          active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                        } group flex rounded-md items-center w-full px-2  py-2 text-sm`}
+                        >
+                          {option}
+                        </button>
+                      )}
+                    </Menu.Item>
+                  ))}
+                </div>
+              </Menu.Items>
+            </Transition>
+          </>
+        )}
+      </Menu>
+    );
+  };
+  
+  export default Dropdown;
+  

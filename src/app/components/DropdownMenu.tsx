@@ -1,5 +1,6 @@
 'use client';
 import { Fragment, useState, useRef, useEffect } from 'react';
+//import { Transition, Menu } from '@headlessui/react/dist/components/menu';
 import { Transition, Menu } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
@@ -37,7 +38,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
   const onMouseLeave = (open: boolean) => {
     open && (timeout = setTimeout(() => closeMenu(), timeoutDuration));
   };
-
+/*
   const getMenuStyle = () => {
     if (dropUp) {
       return {
@@ -49,6 +50,25 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
       return {};
     }
   };
+*/
+const getMenuStyle = () => {
+  const baseStyle = {
+    bottom: 'calc(100% + 0.5rem)',
+    top: 'auto',
+    marginBottom: '0.5rem',
+  };
+
+  const mobileStyle = {
+    maxHeight: '12rem',
+    overflowY: 'auto',
+  };
+
+  if (dropUp) {
+    return { ...baseStyle, ...mobileStyle };
+  } else {
+    return baseStyle;
+  }
+};
 
   useEffect(() => {
     const handleResize = () => {

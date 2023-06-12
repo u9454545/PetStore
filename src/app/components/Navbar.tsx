@@ -43,7 +43,7 @@ const Navbar = () => {
                 <DropdownMenu options={options} placeholder="Products" />
               </p>
             </Link>
-            <Link href="/pricing">
+            <Link href="/products">
               <p className="hover:text-gray-600">Pricing</p>
             </Link>
             <Link href="/about">

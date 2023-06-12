@@ -170,4 +170,3 @@ const getMenuStyle = () => {
 };
 
 export default Dropdown;
-

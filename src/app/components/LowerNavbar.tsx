@@ -7,7 +7,7 @@ import fbLogo from './icons/fb.svg';
 import linkedInLogo from './icons/linkedIn.svg';
 import youtubeLogo from './icons/youtube.svg';
 
-const options = ['English', 'Spanish', 'Mandarin Chinese', 'Hindi', 'Arabic'];
+const options = ['English', 'Spanish'];
 
 const LowerNavbar = () => {
   return (

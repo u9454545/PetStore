@@ -95,9 +95,11 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white py-4 px-8 space-y-4">
-            <Link href="/products">
-              <p className="font-bold hover:text-gray-600 block">Products</p>
-            </Link>
+            
+            <p>
+                <DropdownMenu options={options} placeholder="Products" />
+              </p>
+            
             <Link href="/pricing">
               <p className="font-bold hover:text-gray-600 block">Pricing</p>
             </Link>

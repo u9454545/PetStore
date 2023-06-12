@@ -49,12 +49,25 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
     } else {
       return {};
     }
+  };*/
+  const getMenuStyle = () => {
+    if (dropUp) {
+      return {
+        left: '50%',
+        transform: 'translateX(-50%)',
+        marginTop: '0.5rem',
+      };
+    } else {
+      return {};
+    }
   };
-*/
+  
+
+/*
 const getMenuStyle = () => {
   const baseStyle = {
     bottom: 'calc(100% + 0.5rem)',
-    top: 'auto',
+    top: 'auto',q
     marginBottom: '0.5rem',
   };
 
@@ -68,7 +81,7 @@ const getMenuStyle = () => {
   } else {
     return baseStyle;
   }
-};
+};*/
 
   useEffect(() => {
     const handleResize = () => {

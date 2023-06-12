@@ -38,85 +38,69 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
   const onMouseLeave = (open: boolean) => {
     open && (timeout = setTimeout(() => closeMenu(), timeoutDuration));
   };
+/*
+  const getMenuStyle = () => {
+    if (dropUp) {
+      return {
+        bottom: 'calc(100% + 0.5rem)',
+        top: 'auto',
+        marginBottom: '0.5rem',
+      };
+    } else {
+      return {};
+    }
+  };*/
+  const getMenuStyle = () => {
+    if (dropUp) {
+      return {
+        left: '50%',
+        transform: 'translateX(-50%)',
+        marginTop: '0.5rem',
+      };
+    } else {
+      return {};
+    }
+  };
+  
 
- /* 
-  const getMenuStyle = () => {
-    if (dropUp) {
-      return {
-        left: '50%',
-        transform: 'translateX(-50%)',
-        marginTop: '0.5rem',
-      };
-    } else {
-      return {};
-    }
+/*
+const getMenuStyle = () => {
+  const baseStyle = {
+    bottom: 'calc(100% + 0.5rem)',
+    top: 'auto',q
+    marginBottom: '0.5rem',
   };
-  */
- /*
-  const getMenuStyle = () => {
-    if (dropUp) {
-      return {
-        left: '50%',
-        transform: 'translateX(-50%)',
-        marginTop: '0.5rem',
-        marginBottom: '0.5rem', // Add margin for bottom
-      };
-    } else {
-      return {};
-    }
+
+  const mobileStyle = {
+    maxHeight: '12rem',
+    overflowY: 'auto',
   };
-  */
- const getMenuStyle = () => {
+
   if (dropUp) {
-    return {
-      left: '50%',
-      transform: 'translateX(-50%)',
-      marginTop: '0.5rem',
-      marginBottom: '0.5rem', // Add margin for bottom
-    };
+    return { ...baseStyle, ...mobileStyle };
   } else {
-    return {
-      left: '50%',
-      transform: 'translateX(-50%)',
-      marginTop: '0.5rem',
-      marginBottom: '0.5rem', // Add margin for bottom
-      maxHeight: 'calc(100vh - 2rem)', // Limit height to screen height
-      overflowY: 'auto', // Add scrollable overflow
-    };
+    return baseStyle;
   }
-};
-
-  
-
-  
-  
-  
-
+};*/
 
   useEffect(() => {
     const handleResize = () => {
       if (dropdownRef.current && buttonRef.current) {
         const { top, bottom } = dropdownRef.current.getBoundingClientRect();
-        const { bottom: buttonBottom, height: buttonHeight } = buttonRef.current.getBoundingClientRect();
+        const { bottom: buttonBottom } = buttonRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const dropdownHeight = dropdownRef.current.offsetHeight;
-    
         if (dropUp && top < 0 && buttonBottom > windowHeight) {
-          dropdownRef.current.style.bottom = `${
-            windowHeight - buttonBottom + (buttonHeight / 2) - (dropdownHeight / 2)
-          }px`;
+          dropdownRef.current.style.top = 'auto';
+          dropdownRef.current.style.bottom = 'calc(100% + 0.5rem)';
         } else if (!dropUp && bottom > windowHeight) {
-          dropdownRef.current.style.bottom = `${
-            windowHeight - buttonBottom - dropdownHeight
-          }px`;
+          dropdownRef.current.style.top = 'calc(100% + 0.5rem)';
+          dropdownRef.current.style.bottom = 'auto';
         } else {
+          dropdownRef.current.style.top = 'auto';
           dropdownRef.current.style.bottom = 'auto';
         }
       }
     };
-    
-    
-    
 
     window.addEventListener('resize', handleResize);
     return () => {
@@ -145,15 +129,14 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, dropUp = fals
             </Menu.Button>
           </span>
           <Transition
-  show={open}
-  enter="transition ease-out duration-100"
-  enterFrom="transform opacity-0 scale-95 translate-y-2"
-  enterTo="transform opacity-100 scale-100 translate-y-0"
-  leave="transition ease-in duration-75"
-  leaveFrom="transform opacity-100 scale-100 translate-y-0"
-  leaveTo="transform opacity-0 scale-95 translate-y-2"
->
-
+            show={open}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
             <Menu.Items
               ref={dropdownRef}
               onMouseEnter={() => onMouseEnter(!open)}

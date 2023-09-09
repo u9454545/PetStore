@@ -18,7 +18,7 @@
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
     "eslint": "8.40.0",
-    "eslint-config-next": "13.4.2",
+    "eslint-config-next": "13.4.19",
     "gsap": "^3.11.5",
     "heroicons": "^2.0.18",
     "next": "13.4.2",
